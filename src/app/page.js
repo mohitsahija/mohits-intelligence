@@ -9,6 +9,15 @@ import {
 } from 'lucide-react';
 
 const SIDEBAR_GROUPS = [
+
+    {
+    title: "Trending & Viral",
+    categories: {
+      "Trending Now (Breaking)": { icon: <Flame className="w-5 h-5" />, color: "bg-rose-500 text-white", desc: "Global breaking news and alerts" },
+      "Viral Content & Buzz": { icon: <Activity className="w-5 h-5" />, color: "bg-pink-500 text-white", desc: "Social media trends & buzzworthy topics" },
+      "Most Searched Topics": { icon: <Search className="w-5 h-5" />, color: "bg-indigo-500 text-white", desc: "Top queries across search engines" }
+    }
+  },
   {
     title: "Global Sports Arena",
     categories: {
@@ -19,14 +28,7 @@ const SIDEBAR_GROUPS = [
       "Combat Sports (MMA/Box)": { icon: <Layers className="w-5 h-5" />, color: "bg-red-700 text-white", desc: "UFC fight cards, division updates, and news" }
     }
   },
-  {
-    title: "Trending & Viral",
-    categories: {
-      "Trending Now (Breaking)": { icon: <Flame className="w-5 h-5" />, color: "bg-rose-500 text-white", desc: "Global breaking news and alerts" },
-      "Viral Content & Buzz": { icon: <Activity className="w-5 h-5" />, color: "bg-pink-500 text-white", desc: "Social media trends & buzzworthy topics" },
-      "Most Searched Topics": { icon: <Search className="w-5 h-5" />, color: "bg-indigo-500 text-white", desc: "Top queries across search engines" }
-    }
-  },
+
   {
     title: "Finance & Cards Hub",
     categories: {
