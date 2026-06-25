@@ -1,49 +1,5 @@
 import { NextResponse } from 'next/server';
 
-// ⚡ HELPER: Converts complex AI responses into a lightning-fast raw text stream
-function createTextStream(response, provider) {
-  const encoder = new TextEncoder();
-  const decoder = new TextDecoder("utf-8");
-  let buffer = "";
-
-  return new ReadableStream({
-    async start(controller) {
-      const reader = response.body.getReader();
-      try {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          
-          buffer += decoder.decode(value, { stream: true });
-          const lines = buffer.split('\n');
-          buffer = lines.pop() || ""; // Keep incomplete lines in the buffer
-
-          for (const line of lines) {
-            if (line.trim() === "" || line.trim() === "data: [DONE]") continue;
-            if (line.startsWith("data: ")) {
-              try {
-                const data = JSON.parse(line.slice(6));
-                let text = provider === "gemini" 
-                    ? (data.candidates?.[0]?.content?.parts?.[0]?.text || "") 
-                    : (data.choices?.[0]?.delta?.content || "");
-                
-                if (text) controller.enqueue(encoder.encode(text));
-              } catch (err) {
-                // Ignore incomplete JSON chunks, they will resolve on the next pass
-              }
-            }
-          }
-        }
-      } catch (err) {
-        controller.error(err);
-      } finally {
-        controller.close();
-        reader.releaseLock();
-      }
-    }
-  });
-}
-
 export async function POST(request) {
   try {
     const { headline, source, customPrompt, provider = 'gemini' } = await request.json();
@@ -72,16 +28,16 @@ export async function POST(request) {
       ? `Query: "${customPrompt}". Context Data: "${headline}" [Published via ${source}].`
       : `Deconstruct and expand this primary data payload: "${headline}" [Published via ${source}]. Extract every implicit structural impact.`;
 
-    let apiResponse;
+    let responseText = "";
 
     // ==========================================
-    // PROVIDER 1: LLAMA 3.1 (OpenRouter)
+    // PROVIDER 1: LLAMA 3.1 (FREE CLOUD 24/7 via OpenRouter)
     // ==========================================
     if (provider === 'llama-cloud') {
       const apiKey = process.env.OPENROUTER_API_KEY;
-      if (!apiKey) return NextResponse.json({ error: "OpenRouter API Key missing." }, { status: 400 });
+      if (!apiKey) return NextResponse.json({ error: "OpenRouter API Key is missing. Add OPENROUTER_API_KEY to .env.local" }, { status: 400 });
 
-      apiResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
@@ -90,42 +46,63 @@ export async function POST(request) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: 'openrouter/free',
+          // ⚡ THIS IS THE FIX: Updated to the NEW 3.1 Free Model!
+         model: 'openrouter/free',
           messages: [
             { role: 'system', content: systemInstruction },
             { role: 'user', content: userMessage }
           ],
-          temperature: 0.2,
-          stream: true // ⚡ STREAM ENABLED
+          temperature: 0.2
         })
       });
+      
+      const data = await res.json();
+      if (data.error) throw new Error(`Cloud Llama Error: ${data.error.message || 'Rate limit reached, please wait a moment.'}`);
+      responseText = data.choices[0].message.content;
 
     // ==========================================
     // PROVIDER 2: GOOGLE GEMINI
     // ==========================================
     } else if (provider === 'gemini') {
       const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) return NextResponse.json({ error: "Gemini API Key missing." }, { status: 400 });
+      if (!apiKey) return NextResponse.json({ error: "Gemini API Key is missing." }, { status: 400 });
 
-      // ⚡ ENDPOINT CHANGED TO STREAMING (alt=sse)
-      apiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: { text: systemInstruction } },
-          contents: [{ parts: [{ text: userMessage }] }],
-          generationConfig: { temperature: 0.2 }
-        })
-      });
+      let retries = 1;
+      let data;
+      
+      while (retries >= 0) {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system_instruction: { parts: { text: systemInstruction } },
+            contents: [{ parts: [{ text: userMessage }] }],
+            generationConfig: { temperature: 0.2 }
+          })
+        });
+        
+        data = await res.json();
+        
+        if (data.error && (data.error.code === 429 || data.error.message.includes('high demand'))) {
+          if (retries === 0) throw new Error(`Gemini Servers are currently overloaded: ${data.error.message}`);
+          await new Promise(resolve => setTimeout(resolve, 1500));
+          retries--;
+        } else if (data.error) {
+          throw new Error(`Gemini Error: ${data.error.message}`);
+        } else {
+          break;
+        }
+      }
+      responseText = data.candidates[0].content.parts[0].text;
 
     // ==========================================
     // PROVIDER 3: OPENAI
     // ==========================================
     } else if (provider === 'openai') {
       const apiKey = process.env.OPENAI_API_KEY;
-      if (!apiKey) return NextResponse.json({ error: "OpenAI API Key missing." }, { status: 400 });
+      if (!apiKey) return NextResponse.json({ error: "OpenAI API Key is missing." }, { status: 400 });
 
-      apiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -134,25 +111,19 @@ export async function POST(request) {
             { role: 'system', content: systemInstruction },
             { role: 'user', content: userMessage }
           ],
-          temperature: 0.2,
-          stream: true // ⚡ STREAM ENABLED
+          temperature: 0.2
         })
       });
+      const data = await res.json();
+      if (data.error) throw new Error(`OpenAI Error: ${data.error.message}`);
+      responseText = data.choices[0].message.content;
     }
 
-    if (!apiResponse.ok) {
-      const errorData = await apiResponse.json();
-      throw new Error(errorData.error?.message || "Failed to connect to AI provider");
-    }
-
-    // ⚡ Return the live stream directly to the frontend
-    const stream = createTextStream(apiResponse, provider);
-    return new Response(stream, {
-      headers: { 'Content-Type': 'text/plain; charset=utf-8' }
-    });
+    return NextResponse.json({ response: responseText });
 
   } catch (err) {
     console.error("AI Routing Error:", err);
     return NextResponse.json({ error: err.message || "Failed processing AI request." }, { status: 500 });
   }
 }
+
