@@ -5,84 +5,81 @@ import {
   RefreshCw, ArrowUpRight, Target, Cpu, Layers, DollarSign, ShoppingBag, Radio, 
   FileText, Search, Clock, Sun, Moon, Send, BrainCircuit, Calendar, TrendingUp, 
   TrendingDown, Minus, Menu, X, CheckCircle2, CreditCard, Plane, Building, 
-  Activity, Flame, Globe, Film, HeartPulse, ChevronDown, Trophy, Play, Square, Volume2, Command, Hexagon, Landmark, Briefcase, 
-  ShieldAlert, Lock, Fingerprint // Add these three
+  Activity, Flame, Globe, Film, HeartPulse, ChevronDown, Trophy, Play, Square, Volume2, Command, Hexagon, Landmark, Briefcase, ShieldAlert, Lock, Fingerprint
 } from 'lucide-react';
 
 const SIDEBAR_GROUPS = [
-
-    {
-    title: "Trending & Viral",
-    categories: {
-      "Trending Now (Breaking)": { icon: <Flame className="w-5 h-5" />, color: "bg-rose-500 text-white", desc: "Global breaking news and alerts" },
-      "Viral Content & Buzz": { icon: <Activity className="w-5 h-5" />, color: "bg-pink-500 text-white", desc: "Social media trends & buzzworthy topics" },
-      "Most Searched Topics": { icon: <Search className="w-5 h-5" />, color: "bg-indigo-500 text-white", desc: "Top queries across search engines" }
-    }
-  },
   {
     title: "Global Sports Arena",
     categories: {
-      "Cricket World": { icon: <Trophy className="w-5 h-5" />, color: "bg-emerald-600 text-white", desc: "Live scores, match schedules, and player stats" },
-      "Football & Transfers": { icon: <Activity className="w-5 h-5" />, color: "bg-blue-600 text-white", desc: "League standings, results, and transfer tickers" },
-      "Basketball & NBA": { icon: <Flame className="w-5 h-5" />, color: "bg-orange-500 text-white", desc: "Tournament analysis, rankings, and records" },
-      "Tennis & Racquet Sports": { icon: <Target className="w-5 h-5" />, color: "bg-lime-600 text-white", desc: "Grand Slam draws, rankings, and results" },
-      "Combat Sports (MMA/Box)": { icon: <Layers className="w-5 h-5" />, color: "bg-red-700 text-white", desc: "UFC fight cards, division updates, and news" }
+      "Cricket World": { icon: <Trophy className="w-4 h-4" />, color: "bg-emerald-600 text-white", desc: "Live match telemetry & player form" },
+      "Football & Transfers": { icon: <Activity className="w-4 h-4" />, color: "bg-blue-600 text-white", desc: "Global league standings & transfers" },
+      "Basketball & NBA": { icon: <Flame className="w-4 h-4" />, color: "bg-orange-500 text-white", desc: "Tournament analysis & records" },
+      "Tennis & Racquet Sports": { icon: <Target className="w-4 h-4" />, color: "bg-lime-600 text-white", desc: "Grand Slam draws & ATP/WTA rankings" },
+      "Combat Sports (MMA/Box)": { icon: <Layers className="w-4 h-4" />, color: "bg-red-700 text-white", desc: "UFC fight cards & sentiment" }
     }
   },
-
+  {
+    title: "Trending & Viral",
+    categories: {
+      "Trending Now (Breaking)": { icon: <Flame className="w-4 h-4" />, color: "bg-rose-500 text-white", desc: "Global breaking news alerts" },
+      "Viral Content & Buzz": { icon: <Activity className="w-4 h-4" />, color: "bg-pink-500 text-white", desc: "Social media trends & buzz" },
+      "Most Searched Topics": { icon: <Search className="w-4 h-4" />, color: "bg-indigo-500 text-white", desc: "Top queries across search engines" }
+    }
+  },
   {
     title: "Finance & Cards Hub",
     categories: {
-      "Credit & Debit Cards": { icon: <CreditCard className="w-5 h-5" />, color: "bg-emerald-500 text-white", desc: "Bank offers, policies, and card launches" },
-      "Rewards & Cashback Offers": { icon: <DollarSign className="w-5 h-5" />, color: "bg-amber-500 text-white", desc: "Points, fuel cards, and cashback deals" },
-      "Travel & Forex Cards": { icon: <Plane className="w-5 h-5" />, color: "bg-cyan-500 text-white", desc: "International spending and forex rates" },
-      "Business & Virtual Cards": { icon: <Building className="w-5 h-5" />, color: "bg-slate-700 text-white", desc: "Corporate expense & enterprise cards" },
-      "World Money & Stocks": { icon: <TrendingUp className="w-5 h-5" />, color: "bg-teal-600 text-white", desc: "Global markets, shares, and IPOs" }
+      "Credit & Debit Cards": { icon: <CreditCard className="w-4 h-4" />, color: "bg-emerald-500 text-white", desc: "Bank policies & card launches" },
+      "Rewards & Cashback": { icon: <DollarSign className="w-4 h-4" />, color: "bg-amber-500 text-white", desc: "Points, fuel & cashback deals" },
+      "Travel & Forex": { icon: <Plane className="w-4 h-4" />, color: "bg-cyan-500 text-white", desc: "International spending & forex" },
+      "World Money & Stocks": { icon: <TrendingUp className="w-4 h-4" />, color: "bg-teal-600 text-white", desc: "Global markets & IPOs" }
     }
   },
-{
+  {
     title: "Core Intelligence",
     categories: {
-      "SME & Corporate Expansion": { icon: <Target className="w-5 h-5" />, color: "bg-emerald-600 text-white", desc: "B2B Lead Gen: Facilities & Operations" },
-      "AI & Neural Tech": { icon: <Cpu className="w-5 h-5" />, color: "bg-blue-600 text-white", desc: "Latest artificial intelligence software" },
-      "Cybersecurity & Threats": { icon: <ShieldAlert className="w-5 h-5" />, color: "bg-red-600 text-white", desc: "Threat intel, vulnerabilities & defense" },
-      "Data Privacy & Compliance": { icon: <Lock className="w-5 h-5" />, color: "bg-amber-600 text-white", desc: "Regulatory standards & privacy protocols" },
-      "Digital Identity": { icon: <Fingerprint className="w-5 h-5" />, color: "bg-indigo-600 text-white", desc: "Auth systems, biometrics & KYC" },
-      "Ads Creatives & Meta": { icon: <Radio className="w-5 h-5" />, color: "bg-purple-600 text-white", desc: "Marketing and platform algorithms" },
-      "Tech Innovations": { icon: <Layers className="w-5 h-5" />, color: "bg-slate-800 text-white", desc: "Hardware and enterprise technology" }
+      "SME & Corporate Expansion": { icon: <Target className="w-4 h-4" />, color: "bg-emerald-600 text-white", desc: "B2B Lead Gen & facility ops" },
+      "AI & Neural Networks": { icon: <Cpu className="w-4 h-4" />, color: "bg-blue-600 text-white", desc: "LLM breakthroughs & software" },
+      "Cybersecurity & Threats": { icon: <ShieldAlert className="w-4 h-4" />, color: "bg-red-600 text-white", desc: "Threat intel & vulnerability defense" },
+      "Data Privacy & Compliance": { icon: <Lock className="w-4 h-4" />, color: "bg-amber-600 text-white", desc: "Regulatory standards & protocols" },
+      "Digital Identity": { icon: <Fingerprint className="w-4 h-4" />, color: "bg-indigo-600 text-white", desc: "Auth systems & biometrics" },
+      "Ads Creatives & Meta": { icon: <Radio className="w-4 h-4" />, color: "bg-purple-600 text-white", desc: "Marketing platform algorithms" }
     }
   },
   {
     title: "Everyday Essentials",
     categories: {
-      "E-commerce & Retail": { icon: <ShoppingBag className="w-5 h-5" />, color: "bg-orange-500 text-white", desc: "Online shopping & retail industry" },
-      "Real Estate & Property": { icon: <Building className="w-5 h-5" />, color: "bg-blue-500 text-white", desc: "Housing, commercial, and property markets" },
-      "Health & Lifestyle": { icon: <HeartPulse className="w-5 h-5" />, color: "bg-rose-400 text-white", desc: "Wellness, fitness, and living" },
-      "Global Entertainment": { icon: <Film className="w-5 h-5" />, color: "bg-purple-500 text-white", desc: "Movies, sports, and celebrity culture" }
+      "E-commerce & Retail": { icon: <ShoppingBag className="w-4 h-4" />, color: "bg-orange-500 text-white", desc: "Online shopping & retail" },
+      "Real Estate & Property": { icon: <Building className="w-4 h-4" />, color: "bg-blue-500 text-white", desc: "Housing & commercial markets" },
+      "Health & Lifestyle": { icon: <HeartPulse className="w-4 h-4" />, color: "bg-rose-400 text-white", desc: "Wellness & fitness trends" },
+      "Global Entertainment": { icon: <Film className="w-4 h-4" />, color: "bg-purple-500 text-white", desc: "Media, box office & celebrity" }
     }
   }
 ];
 
-const MohitIntelligenceLogo = ({ animated = false }) => {
+const EchelonLogo = ({ animated = false }) => (
+  <div className="relative flex items-center justify-center w-10 h-10 shrink-0 mr-2">
+    <motion.div className="absolute inset-0 bg-cyan-500 rounded-full opacity-20 blur-xl"
+      animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-2xl z-10">
+      <motion.path d="M20 80V30L50 55L80 30V80" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"
+        initial={animated ? { pathLength: 0, opacity: 0 } : { pathLength: 1, opacity: 1 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2, ease: "easeInOut" }} />
+      <motion.circle cx="50" cy="55" r="6.5" fill="#06b6d4" 
+        initial={animated ? { scale: 0 } : { scale: 1 }} animate={{ scale: 1 }} transition={{ delay: animated ? 1.5 : 0, type: "spring", stiffness: 200 }} className="drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+      <motion.path d="M50 55V85" stroke="#06b6d4" strokeWidth="6" strokeLinecap="round" 
+        initial={animated ? { pathLength: 0 } : { pathLength: 1 }} animate={{ pathLength: 1 }} transition={{ delay: animated ? 1.8 : 0, duration: 0.8 }} className="drop-shadow-[0_0_5px_rgba(6,182,212,0.5)]" />
+    </svg>
+  </div>
+);
+
+const MiniSparkline = ({ trend }) => {
+  const color = trend === 'BULLISH' ? 'stroke-emerald-500' : trend === 'BEARISH' ? 'stroke-rose-500' : 'stroke-slate-500';
+  const path = trend === 'BULLISH' ? "M0 10 L5 6 L10 8 L20 2" : trend === 'BEARISH' ? "M0 2 L5 6 L10 4 L20 10" : "M0 5 L5 4 L10 6 L20 5";
   return (
-    <div className="relative flex items-center justify-center w-12 h-12 shrink-0 mr-2">
-      <motion.div
-        className="absolute inset-0 bg-cyan-500 rounded-full opacity-20 blur-xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-2xl z-10">
-        <motion.path d="M20 80V30L50 55L80 30V80" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"
-          initial={animated ? { pathLength: 0, opacity: 0 } : { pathLength: 1, opacity: 1 }} 
-          animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2, ease: "easeInOut" }} />
-        <motion.circle cx="50" cy="55" r="6.5" fill="#06b6d4" 
-          initial={animated ? { scale: 0 } : { scale: 1 }} animate={{ scale: 1 }} 
-          transition={{ delay: animated ? 1.5 : 0, type: "spring", stiffness: 200, damping: 10 }} className="drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
-        <motion.path d="M50 55V85" stroke="#06b6d4" strokeWidth="6" strokeLinecap="round" 
-          initial={animated ? { pathLength: 0 } : { pathLength: 1 }} animate={{ pathLength: 1 }} 
-          transition={{ delay: animated ? 1.8 : 0, duration: 0.8, ease: "easeOut" }} className="drop-shadow-[0_0_5px_rgba(6,182,212,0.5)]" />
-      </svg>
-    </div>
+    <svg width="24" height="12" viewBox="0 0 20 12" fill="none" className="mr-1">
+      <path d={path} className={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
   );
 };
 
@@ -119,7 +116,7 @@ export default function DeepIntelligencePlatform() {
   const [tickerData, setTickerData] = useState([]);
   
   const [activeCategory, setActiveCategory] = useState("Cricket World");
-  const [expandedGroups, setExpandedGroups] = useState({ "Global Sports Arena": true, "Trending & Viral": false });
+  const [expandedGroups, setExpandedGroups] = useState({ "Sports & Performance Telemetry": true, "Global Markets & Equities": true });
   
   const [selectedItem, setSelectedItem] = useState(null);
   const [isSyncing, setIsSyncing] = useState(true);
@@ -127,13 +124,11 @@ export default function DeepIntelligencePlatform() {
   const [toastMsg, setToastMsg] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scratchpad, setScratchpad] = useState("");
   
   const [analysisCache, setAnalysisCache] = useState({});
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
   const [cmdSearch, setCmdSearch] = useState("");
   
-  // ⚡ Default set to OpenRouter Llama Cloud!
   const [aiProvider, setAiProvider] = useState("llama-cloud");
   const [aiAnalysis, setAiAnalysis] = useState("");
   const [aiLoading, setAiLoading] = useState(false);
@@ -157,9 +152,6 @@ export default function DeepIntelligencePlatform() {
 
   useEffect(() => {
     const splashTimer = setTimeout(() => setIsIntroPlaying(false), 2400);
-    const savedNotes = localStorage.getItem("mohit_scratchpad");
-    if (savedNotes) setScratchpad(savedNotes);
-
     const clockInterval = setInterval(() => {
       const now = new Date();
       setTime({
@@ -175,8 +167,7 @@ export default function DeepIntelligencePlatform() {
 
   useEffect(() => {
     const root = window.document.documentElement;
-    if (isDarkMode) root.classList.add('dark');
-    else root.classList.remove('dark');
+    root.classList.add('dark');
   }, [isDarkMode]);
 
   useEffect(() => {
@@ -214,10 +205,12 @@ export default function DeepIntelligencePlatform() {
     }
   };
 
+  // ⚡ UPGRADED: Lightning Fast Streaming Implementation
   const handleItemSelection = async (item, forceProvider = aiProvider) => {
     setSelectedItem(item);
     const cacheKey = `${item.id}-${forceProvider}`;
 
+    // INSTANT LOAD IF CACHED
     if (analysisCache[cacheKey]) {
       setAiAnalysis(analysisCache[cacheKey]);
       setAiLoading(false);
@@ -230,47 +223,73 @@ export default function DeepIntelligencePlatform() {
     if (window.innerWidth < 1024) setMobileMenuOpen(false);
 
     try {
-      const chatRes = await fetch('/api/chat', {
+      const response = await fetch('/api/chat', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ headline: item.title, source: item.source, provider: forceProvider })
       });
-      const chatData = await chatRes.json();
-      
-      if (chatData.error) {
-        setAiAnalysis(`❌ [API CONNECTION FAILED]:\n${chatData.error}`);
-      } else {
-        setAiAnalysis(chatData.response);
-        setAnalysisCache(prev => ({ ...prev, [cacheKey]: chatData.response }));
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        setAiAnalysis(`❌ [API ERROR]: ${errorData.error || response.statusText}`);
+        setAiLoading(false);
+        return;
       }
+
+      setAiLoading(false); // Stop loader the millisecond the stream connects!
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let fullText = "";
+      
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        const chunk = decoder.decode(value, { stream: true });
+        fullText += chunk;
+        setAiAnalysis(fullText); // Typewriter effect live to UI
+      }
+
+      setAnalysisCache(prev => ({ ...prev, [cacheKey]: fullText })); // Cache for later
+
     } catch (err) {
-      setAiAnalysis(`❌ [NETWORK ERROR]: Failed to contact backend server.`);
-    } finally {
+      setAiAnalysis(`❌ [NETWORK ERROR]: Failed to establish neural stream.`);
       setAiLoading(false);
     }
   };
 
+  // ⚡ UPGRADED: Streaming for Custom Query Box
   const executeCustomAiQuery = async () => {
     if (!customQuery.trim() || !selectedItem) return;
     setAiLoading(true);
     setAiAnalysis("");
+    
     try {
-      const chatRes = await fetch('/api/chat', {
+      const response = await fetch('/api/chat', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ headline: selectedItem.title, source: selectedItem.source, customPrompt: customQuery, provider: aiProvider })
       });
-      const chatData = await chatRes.json();
+
+      if (!response.ok) throw new Error("Connection failed");
       
-      if (chatData.error) {
-         setAiAnalysis(`❌ [ERROR]: ${chatData.error}`);
-      } else {
-         setAiAnalysis(chatData.response);
-      }
-    } catch (err) {
-      setAiAnalysis("❌ [NETWORK ERROR]: Failed to process custom query.");
-    } finally {
       setAiLoading(false);
       setCustomQuery("");
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let fullText = "";
+      
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        fullText += chunk;
+        setAiAnalysis(fullText);
+      }
+    } catch (err) {
+      setAiAnalysis("❌ [NETWORK ERROR]: Failed to process custom query stream.");
+      setAiLoading(false);
     }
   };
 
@@ -301,39 +320,65 @@ export default function DeepIntelligencePlatform() {
   const toggleGroup = (groupName) => setExpandedGroups(prev => ({ ...prev, [groupName]: !prev[groupName] }));
 
   const getSentimentBadge = (sentiment) => {
-    if (sentiment === 'BULLISH') return <span className="flex items-center gap-1 text-emerald-500 bg-emerald-500/10 px-1.5 py-0.5 rounded text-[9px] font-bold"><TrendingUp className="w-3 h-3"/> BULLISH</span>;
-    if (sentiment === 'BEARISH') return <span className="flex items-center gap-1 text-rose-500 bg-rose-500/10 px-1.5 py-0.5 rounded text-[9px] font-bold"><TrendingDown className="w-3 h-3"/> BEARISH</span>;
-    return <span className="flex items-center gap-1 text-slate-400 bg-slate-400/10 px-1.5 py-0.5 rounded text-[9px] font-bold"><Minus className="w-3 h-3"/> NEUTRAL</span>;
+    if (sentiment === 'BULLISH') return <span className="flex items-center text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest"><MiniSparkline trend="BULLISH"/> LONG</span>;
+    if (sentiment === 'BEARISH') return <span className="flex items-center text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest"><MiniSparkline trend="BEARISH"/> SHORT</span>;
+    return <span className="flex items-center text-slate-400 bg-slate-400/10 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest"><MiniSparkline trend="NEUTRAL"/> HOLD</span>;
+  };
+
+  const sanitizeTitle = (title) => {
+    if (!title) return "";
+    return title.replace(/\|.*Live.*(Match|Commentary|Score).*$/i, '')
+                .replace(/\([a-zA-Z0-9]{8,15}\)/g, '')
+                .trim();
   };
 
   const renderPremiumSemanticContent = (rawText) => {
     if (!rawText) return null;
     return rawText.split('\n').map((line, idx) => {
       const cleanLine = line.trim();
-      if (cleanLine.startsWith('■')) {
+      
+      if (cleanLine.includes('■ THE EDGE') || cleanLine.includes('■ ACTIONABLE')) {
         return (
-          <h3 key={idx} className="text-xs font-black tracking-widest text-slate-900 dark:text-cyan-400 uppercase mt-6 mb-2 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800/60 pb-1 font-mono">
-            <span>■</span> {cleanLine.replace('■', '').trim()}
+          <h3 key={idx} className="text-xs font-black tracking-widest text-cyan-400 uppercase mt-8 mb-2 flex items-center gap-2 font-mono">
+            <Zap className="w-4 h-4" /> THE EDGE (PREDICTIVE IMPLICATION)
           </h3>
         );
       }
+      
+      if (cleanLine.startsWith('■')) {
+        return (
+          <h3 key={idx} className="text-xs font-black tracking-widest text-slate-100 uppercase mt-6 mb-2 flex items-center gap-2 border-b border-slate-800 pb-1 font-mono">
+            <span className="text-cyan-500">■</span> {cleanLine.replace('■', '').trim()}
+          </h3>
+        );
+      }
+      
       if (cleanLine.startsWith('✦')) {
         return (
-          <div key={idx} className="text-xs font-medium text-slate-700 dark:text-slate-300 flex items-start gap-3 pl-1 py-1 leading-relaxed">
+          <div key={idx} className="text-sm font-medium text-slate-300 flex items-start gap-3 pl-1 py-1.5 leading-relaxed font-sans">
             <span className="text-cyan-500 font-bold mt-0.5">✦</span>
             <span>{cleanLine.replace('✦', '').trim()}</span>
           </div>
         );
       }
+      
+      if (idx > 0 && (rawText.split('\n')[idx-1] || '').includes('■ THE EDGE') && cleanLine) {
+        return (
+          <div key={idx} className="p-4 mt-2 rounded-lg bg-gradient-to-br from-cyan-900/30 to-blue-900/10 border border-cyan-500/30 text-sm leading-relaxed text-cyan-50 font-medium shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+            {cleanLine}
+          </div>
+        )
+      }
+
       return cleanLine ? (
-        <p key={idx} className="text-xs leading-relaxed text-slate-600 dark:text-slate-400 font-normal pl-4 mb-3">
+        <p key={idx} className="text-sm leading-relaxed text-slate-400 font-sans pl-4 mb-3">
           {cleanLine}
         </p>
       ) : <div key={idx} className="h-2" />;
     });
   };
 
-  let activeCatData = { icon: <Globe className="w-5 h-5"/>, color: "bg-slate-500 text-white" };
+  let activeCatData = { icon: <Globe className="w-4 h-4"/>, color: "bg-slate-500 text-white" };
   SIDEBAR_GROUPS.forEach(group => { if (group.categories[activeCategory]) activeCatData = group.categories[activeCategory]; });
 
   const displayData = data[activeCategory]?.filter(item => 
@@ -342,31 +387,31 @@ export default function DeepIntelligencePlatform() {
   ) || [];
 
   return (
-    <div className="luxury-grid h-screen w-full flex flex-col font-sans transition-colors duration-300 selection:bg-cyan-500 selection:text-white relative">
+    <div className="bg-[#050505] h-screen w-full flex flex-col transition-colors duration-300 selection:bg-cyan-500 selection:text-white relative font-sans overflow-hidden">
       
       <AnimatePresence>
         {cmdPaletteOpen && (
           <motion.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-950/60 backdrop-blur-md z-50 flex items-start justify-center pt-[15vh] px-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center pt-[15vh] px-4"
             onClick={() => setCmdPaletteOpen(false)}
           >
             <motion.div 
               initial={{ scale: 0.96, y: -10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.96, y: -10 }}
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-lg rounded-xl shadow-2xl overflow-hidden"
+              className="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-xl shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2.5 bg-slate-50 dark:bg-slate-950/40">
+              <div className="p-3.5 border-b border-slate-800 flex items-center gap-2.5 bg-slate-950/40">
                 <Command className="w-4 h-4 text-cyan-500" />
                 <input 
                   type="text" 
                   autoFocus
-                  placeholder="Type a matrix category to switch layout streams..."
+                  placeholder="Query unified data streams..."
                   value={cmdSearch}
                   onChange={(e) => setCmdSearch(e.target.value)}
-                  className="w-full bg-transparent border-none text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-transparent border-none text-xs text-white placeholder-slate-500 focus:outline-none font-mono"
                 />
-                <kbd className="text-[10px] font-mono px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-slate-500">ESC</kbd>
+                <kbd className="text-[10px] font-mono px-1.5 py-0.5 bg-slate-800 rounded text-slate-400">ESC</kbd>
               </div>
               <div className="max-h-60 overflow-y-auto p-2 custom-scroll space-y-0.5">
                 {SIDEBAR_GROUPS.flatMap(g => Object.keys(g.categories))
@@ -375,7 +420,7 @@ export default function DeepIntelligencePlatform() {
                     <button 
                       key={cat}
                       onClick={() => { setActiveCategory(cat); setSelectedItem(null); setCmdPaletteOpen(false); setCmdSearch(""); }}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-xs font-bold font-mono transition-colors flex items-center justify-between ${activeCategory === cat ? 'bg-cyan-500 text-white' : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60'}`}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-xs font-bold font-mono transition-colors flex items-center justify-between ${activeCategory === cat ? 'bg-cyan-600 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
                     >
                       <span>{cat}</span>
                       <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
@@ -389,12 +434,12 @@ export default function DeepIntelligencePlatform() {
 
       <AnimatePresence>
         {isIntroPlaying && (
-          <motion.div className="fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center text-white" exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.6, ease: "easeInOut" } }}>
+          <motion.div className="fixed inset-0 z-[100] bg-[#050505] flex flex-col items-center justify-center text-white" exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}>
             <div className="flex flex-col items-center gap-6">
-              <MohitIntelligenceLogo animated={true} />
+              <EchelonLogo animated={true} />
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.8 }} className="text-center">
-                <h2 className="text-xl font-black tracking-[0.3em] text-slate-100 uppercase">MOHIT SAHIJA</h2>
-                <p className="text-[10px] font-mono tracking-[0.5em] text-cyan-400 uppercase mt-2">AI-DRIVEN MACRO ANALYTICS ENGINE</p>
+                <h2 className="text-2xl font-black tracking-[0.4em] text-white uppercase font-sans">ECHELON TERMINAL</h2>
+                <p className="text-[10px] font-mono tracking-[0.5em] text-cyan-500 uppercase mt-3">NEURAL SYNTHESIS & LIVE TELEMETRY</p>
               </motion.div>
             </div>
           </motion.div>
@@ -403,7 +448,7 @@ export default function DeepIntelligencePlatform() {
 
       <Toast message={toastMsg} isVisible={toastMsg !== ""} />
 
-      <div className="ticker-wrap h-8 flex items-center border-b border-slate-200/80 dark:border-slate-800 bg-slate-900 text-[11px] font-mono font-bold text-slate-300 shrink-0">
+      <div className="ticker-wrap h-8 flex items-center border-b border-slate-800 bg-[#0a0a0a] text-[11px] font-mono font-bold text-slate-300 shrink-0">
         <div className="ticker-move">
           {[...Array(3)].map((_, loopIdx) => (
             <span key={loopIdx}>
@@ -413,89 +458,85 @@ export default function DeepIntelligencePlatform() {
                     {stock.isUp ? '▲' : '▼'} {stock.name} {stock.price} ({stock.percent}%)
                   </span>
                 ))
-              ) : <span className="mx-6 text-slate-400">CONNECTING REAL-TIME GLOBAL MARKET CHANNELS...</span>}
+              ) : <span className="mx-6 text-slate-500">ESTABLISHING CONNECTION TO GLOBAL EXCHANGES...</span>}
             </span>
           ))}
         </div>
       </div>
 
-     <header className="bg-white/95 dark:bg-slate-950/95 border-b border-slate-200 dark:border-slate-800 px-4 md:px-6 py-2.5 flex justify-between items-center backdrop-blur-xl z-20 shrink-0 shadow-sm sticky top-0">
-        <div className="flex items-center gap-3 md:gap-4">
-          <button className="lg:hidden text-slate-700 dark:text-slate-300 hover:text-cyan-500 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+     <header className="bg-[#0a0a0a]/95 border-b border-slate-800 px-4 md:px-6 py-3 flex justify-between items-center backdrop-blur-xl z-20 shrink-0 shadow-sm sticky top-0">
+        <div className="flex items-center gap-3 md:gap-5">
+          <button className="lg:hidden text-slate-300 hover:text-cyan-400 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
           
           <div className="scale-75 origin-left -my-2 flex items-center">
-            <MohitIntelligenceLogo animated={false} />
+            <EchelonLogo animated={false} />
           </div>
           
-          <div className="flex items-baseline gap-2.5">
-            <h1 className="text-lg md:text-xl font-black tracking-tighter text-slate-900 dark:text-white uppercase">
-              MOHIT'S INTELLIGENCE
+          <div className="flex items-baseline gap-3">
+            <h1 className="text-lg md:text-xl font-black tracking-[0.1em] text-white uppercase">
+              ECHELON
             </h1>
-            <span className="text-[10px] md:text-xs font-bold tracking-widest text-cyan-600 dark:text-cyan-400 hidden sm:inline uppercase">
-              INSIGHTS
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-cyan-500 hidden sm:inline uppercase font-mono">
+              TERMINAL
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="flex items-center gap-4 md:gap-6">
           <button 
             onClick={() => setCmdPaletteOpen(true)}
-            className="hidden xl:flex items-center gap-2 bg-slate-100 dark:bg-slate-900 px-2.5 py-1.5 rounded-md text-[10px] font-mono font-bold text-slate-400 border border-slate-200 dark:border-slate-800 shadow-inner hover:text-cyan-500 transition-colors"
+            className="hidden xl:flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded text-[10px] font-mono font-bold text-slate-400 border border-slate-800 hover:text-cyan-400 hover:border-cyan-900 transition-colors"
           >
             <Command className="w-3 h-3 text-cyan-500" />
-            <span>PRESS CMD+K</span>
+            <span>CMD+K</span>
           </button>
 
-          <div className="hidden lg:flex items-center gap-4 text-[9px] font-mono font-bold text-slate-500 dark:text-slate-400 border-r border-slate-200 dark:border-slate-800 pr-5">
-            <span className="flex items-center gap-1.5"><Clock className="w-3 h-3 text-slate-400"/> IND: {time.ahmedabad}</span>
-            <span className="flex items-center gap-1.5"><Clock className="w-3 h-3 text-slate-400"/> NY: {time.ny}</span>
-            <span className="flex items-center gap-1.5"><Clock className="w-3 h-3 text-slate-400"/> LON: {time.lon}</span>
+          <div className="hidden lg:flex items-center gap-5 text-[10px] font-mono font-bold text-slate-400 border-r border-slate-800 pr-6">
+            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-slate-600"/> IND: {time.ahmedabad}</span>
+            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-slate-600"/> NY: {time.ny}</span>
+            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-slate-600"/> LON: {time.lon}</span>
           </div>
           
           <div className="flex items-center gap-2">
-            <button onClick={() => setIsDarkMode(!isDarkMode)} className="p-2 rounded-md bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-all border border-slate-200 dark:border-slate-800">
-              {isDarkMode ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
-            </button>
-            <button onClick={() => pullRealtimeFeeds(true)} disabled={isSyncing} className="px-3 md:px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-black text-[9px] tracking-widest uppercase rounded-md transition-all flex items-center gap-2 shadow-sm hover:bg-slate-800 dark:hover:bg-slate-200 active:scale-95">
-              <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin text-cyan-400 dark:text-cyan-600' : ''}`} />
-              <span className="hidden sm:inline">{isSyncing ? 'SYNCING' : 'REFRESH'}</span>
+            <button onClick={() => pullRealtimeFeeds(true)} disabled={isSyncing} className="px-4 py-2 bg-cyan-600/10 text-cyan-400 border border-cyan-500/30 font-black text-[10px] font-mono tracking-widest uppercase rounded transition-all flex items-center gap-2 hover:bg-cyan-500 hover:text-white active:scale-95">
+              <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin' : ''}`} />
+              <span className="hidden sm:inline">{isSyncing ? 'SYNCING...' : 'LIVE SYNC'}</span>
             </button>
           </div>
         </div>
       </header>
 
       <div className="flex flex-1 min-h-0 overflow-hidden relative">
-        <div className={`${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 absolute lg:relative top-0 left-0 h-full w-[340px] bg-white dark:bg-slate-900/95 border-r border-slate-200 dark:border-slate-800 flex flex-col z-30 shrink-0 transition-transform duration-300 ease-in-out`}>
-          <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center shrink-0">
-            <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Unified Search Matrices</h3>
+        <div className={`${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 absolute lg:relative top-0 left-0 h-full w-[320px] bg-[#0a0a0a] border-r border-slate-800 flex flex-col z-30 shrink-0 transition-transform duration-300 ease-in-out`}>
+          <div className="p-4 border-b border-slate-800 flex justify-between items-center shrink-0">
+            <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-widest font-mono">Macro Data Vectors</h3>
           </div>
           
-          <div className="flex-1 custom-scroll overflow-y-auto p-3 space-y-4">
+          <div className="flex-1 custom-scroll overflow-y-auto p-3 space-y-3">
             {SIDEBAR_GROUPS.map((group, groupIdx) => (
-              <div key={groupIdx} className="border border-slate-200 dark:border-slate-800 rounded-xl bg-slate-50 dark:bg-slate-950/30 overflow-hidden">
-                <button onClick={() => toggleGroup(group.title)} className="w-full flex justify-between items-center p-3 text-left hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
-                  <span className="text-xs font-black text-slate-800 dark:text-slate-300 uppercase tracking-widest">{group.title}</span>
-                  <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${expandedGroups[group.title] ? 'rotate-180' : ''}`} />
+              <div key={groupIdx} className="border border-slate-800/60 rounded-xl bg-[#0d0d0d] overflow-hidden">
+                <button onClick={() => toggleGroup(group.title)} className="w-full flex justify-between items-center p-3.5 text-left hover:bg-slate-900 transition-colors">
+                  <span className="text-[11px] font-black text-slate-300 uppercase tracking-widest font-mono">{group.title}</span>
+                  <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${expandedGroups[group.title] ? 'rotate-180' : ''}`} />
                 </button>
                 
                 <AnimatePresence>
                   {expandedGroups[group.title] && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                      <div className="px-2 pb-2 space-y-1">
+                      <div className="px-2 pb-2 space-y-0.5">
                         {Object.entries(group.categories).map(([catName, catData]) => (
                           <button
                             key={catName}
                             onClick={() => { setActiveCategory(catName); setSelectedItem(null); setSearchQuery(""); if(window.innerWidth < 1024) setMobileMenuOpen(false); }}
-                            className={`w-full flex items-start gap-3 p-2.5 rounded-lg text-left transition-all ${activeCategory === catName ? 'bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700' : 'hover:bg-white/50 dark:hover:bg-slate-800/50 border border-transparent'}`}
+                            className={`w-full flex items-center gap-3 p-2.5 rounded-lg text-left transition-all ${activeCategory === catName ? 'bg-slate-800 shadow-inner border border-slate-700' : 'hover:bg-slate-900 border border-transparent'}`}
                           >
-                            <span className={`p-1.5 rounded-md mt-0.5 shrink-0 ${activeCategory === catName ? catData.color : 'bg-slate-200 dark:bg-slate-800 text-slate-500'}`}>
+                            <span className={`p-1.5 rounded shrink-0 ${activeCategory === catName ? catData.color : 'bg-slate-900 text-slate-500'}`}>
                               {catData.icon}
                             </span>
                             <div className="flex-1 min-w-0">
-                              <div className={`text-xs font-bold truncate ${activeCategory === catName ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'}`}>{catName}</div>
-                              <div className="text-[9px] font-medium text-slate-400 dark:text-slate-500 line-clamp-1 mt-0.5">{catData.desc}</div>
+                              <div className={`text-xs font-bold truncate tracking-wide ${activeCategory === catName ? 'text-white' : 'text-slate-400'}`}>{catName}</div>
                             </div>
                           </button>
                         ))}
@@ -508,51 +549,50 @@ export default function DeepIntelligencePlatform() {
           </div>
         </div>
 
-        <div className="flex-1 border-r border-slate-200 dark:border-slate-800 bg-slate-50/40 dark:bg-slate-950/40 flex flex-col min-w-0 lg:min-w-[400px]">
-          <div className="px-4 md:px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shrink-0">
+        <div className="flex-1 border-r border-slate-800 bg-[#050505] flex flex-col min-w-0 lg:min-w-[400px]">
+          <div className="px-4 md:px-6 py-4 border-b border-slate-800 bg-[#0a0a0a] flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shrink-0">
             <div className="flex items-center gap-3">
-              <span className={`p-2 rounded-md ${activeCatData.color}`}>{activeCatData.icon}</span>
-              <h2 className="text-sm font-black tracking-tight text-slate-900 dark:text-white uppercase font-mono">{activeCategory}</h2>
+              <span className={`p-2 rounded ${activeCatData.color}`}>{activeCatData.icon}</span>
+              <h2 className="text-sm font-black tracking-widest text-white uppercase font-mono">{activeCategory}</h2>
             </div>
             
             <div className="relative w-full md:w-auto">
-              <Search className="w-3.5 h-3.5 absolute left-2.5 top-2 text-slate-400" />
-              <input type="text" placeholder="Filter nodes..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full md:w-56 pl-8 pr-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-xs text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 transition-colors" />
+              <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-slate-500" />
+              <input type="text" placeholder="Filter telemetry..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full md:w-64 pl-9 pr-3 py-2 bg-[#0d0d0d] border border-slate-800 rounded text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500/50 transition-colors font-mono" />
             </div>
           </div>
 
-          <div className="flex-1 p-4 custom-scroll overflow-y-auto space-y-3 relative">
+          <div className="flex-1 p-4 md:p-6 custom-scroll overflow-y-auto space-y-4 relative">
             {isSyncing && !data[activeCategory] ? (
               [...Array(6)].map((_, idx) => (
-                <div key={idx} className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-sm">
-                  <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-3/4 shimmer-bg" />
-                  <div className="h-3 bg-slate-100 dark:bg-slate-800 rounded w-1/2 shimmer-bg" />
+                <div key={idx} className="p-5 rounded-xl border border-slate-800 bg-[#0a0a0a] space-y-3">
+                  <div className="h-4 bg-slate-800 rounded w-3/4 animate-pulse" />
+                  <div className="h-3 bg-slate-800/50 rounded w-1/2 animate-pulse" />
                 </div>
               ))
             ) : displayData.length === 0 ? (
-              <div className="h-full flex flex-col items-center justify-center text-slate-400 opacity-60 pt-10">
-                <Target className="w-10 h-10 mb-3 stroke-1" />
-                <p className="text-xs font-mono">No telemetry blocks found for this segment.</p>
-                <p className="text-[10px] text-slate-500 mt-2">Try refreshing the data stream.</p>
+              <div className="h-full flex flex-col items-center justify-center text-slate-600 pt-10">
+                <Target className="w-12 h-12 stroke-1 mb-4 text-slate-700" />
+                <p className="text-xs font-mono uppercase tracking-widest">No telemetry signals acquired.</p>
               </div>
             ) : (
               displayData.map((item) => (
                 <motion.div key={item.id} layoutId={`card-${item.id}`} onClick={() => handleItemSelection(item)}
-                  className={`p-4 rounded-xl border bg-white dark:bg-slate-900 transition-all duration-200 cursor-pointer shadow-sm relative group ${selectedItem?.id === item.id ? 'border-slate-900 dark:border-white ring-1 ring-slate-900 dark:ring-white shadow-md' : 'border-slate-200 dark:border-slate-800 hover:-translate-y-0.5 hover:shadow-md'}`}>
+                  className={`p-5 rounded-xl border bg-[#0a0a0a] transition-all duration-200 cursor-pointer relative group ${selectedItem?.id === item.id ? 'border-cyan-500/50 shadow-[0_0_20px_rgba(6,182,212,0.05)]' : 'border-slate-800 hover:border-slate-600'}`}>
                   
-                  <div className="flex justify-between items-start mb-2 gap-2">
-                    <span className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-400 font-bold text-[9px] font-mono">{item.source}</span>
+                  <div className="flex justify-between items-start mb-3 gap-2">
+                    <span className="bg-slate-900 border border-slate-800 px-2 py-0.5 rounded text-slate-400 font-bold text-[10px] uppercase font-mono tracking-widest">{item.source}</span>
                     {getSentimentBadge(item.sentiment)}
                   </div>
                   
-                  <h3 className="text-xs md:text-sm font-bold leading-snug text-slate-800 dark:text-slate-100 group-hover:text-slate-900 dark:group-hover:text-cyan-400 mb-3 transition-colors">
-                    {item.title}
+                  <h3 className="text-[15px] md:text-[17px] font-bold leading-snug text-slate-200 group-hover:text-cyan-400 mb-4 transition-colors font-serif tracking-wide">
+                    {sanitizeTitle(item.title)}
                   </h3>
                   
-                  <div className="flex justify-between items-center text-[10px] font-mono font-medium text-slate-500 dark:text-slate-400">
-                    <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {item.dateString}</span>
-                    <span className="text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/20 px-2 py-0.5 rounded-full">{getTimeAgo(item.rawDate)}</span>
+                  <div className="flex justify-between items-center text-[10px] font-mono font-medium text-slate-500">
+                    <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {item.dateString}</span>
+                    <span className="text-cyan-500 bg-cyan-500/10 px-2 py-1 rounded">{getTimeAgo(item.rawDate)}</span>
                   </div>
                 </motion.div>
               ))
@@ -560,76 +600,53 @@ export default function DeepIntelligencePlatform() {
           </div>
         </div>
 
-        <div className={`${selectedItem ? 'flex' : 'hidden'} lg:flex w-full absolute lg:relative top-0 left-0 h-full lg:w-[480px] xl:w-[580px] bg-white dark:bg-slate-900 flex-col z-20 shrink-0 border-l border-slate-200 dark:border-slate-800`}>
+        <div className={`${selectedItem ? 'flex' : 'hidden'} lg:flex w-full absolute lg:relative top-0 left-0 h-full lg:w-[480px] xl:w-[600px] bg-[#050505] flex-col z-20 shrink-0 border-l border-slate-800`}>
           
-          <div className="px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center shrink-0 bg-slate-50 dark:bg-slate-950">
-            <button onClick={() => setSelectedItem(null)} className="flex items-center gap-1 text-[10px] font-mono font-bold tracking-tight text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 px-2 py-1 rounded bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors uppercase">
-              ← Back To Front Page
+          <div className="px-5 py-3 border-b border-slate-800 flex justify-between items-center shrink-0 bg-[#0a0a0a]">
+            <button onClick={() => setSelectedItem(null)} className="flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-widest text-slate-400 border border-slate-800 px-3 py-1.5 rounded bg-slate-900 hover:text-white transition-colors uppercase">
+              ← Close Dossier
             </button>
             <div className="flex items-center gap-2">
-              <button onClick={() => setTextSizeModifier(prev => Math.max(-2, prev - 1))} className="text-xs font-mono font-black border border-slate-200 dark:border-slate-800 px-2 py-1 rounded bg-white dark:bg-slate-900 text-slate-500 hover:bg-slate-100">A-</button>
-              <button onClick={() => setTextSizeModifier(prev => Math.min(4, prev + 1))} className="text-xs font-mono font-black border border-slate-200 dark:border-slate-800 px-2 py-1 rounded bg-white dark:bg-slate-900 text-slate-500 hover:bg-slate-100">A+</button>
+              <button onClick={() => setTextSizeModifier(prev => Math.max(-2, prev - 1))} className="text-[10px] font-mono font-black border border-slate-800 px-2.5 py-1 rounded bg-slate-900 text-slate-500 hover:text-white">A-</button>
+              <button onClick={() => setTextSizeModifier(prev => Math.min(4, prev + 1))} className="text-[10px] font-mono font-black border border-slate-800 px-2.5 py-1 rounded bg-slate-900 text-slate-500 hover:text-white">A+</button>
             </div>
           </div>
 
-          <div className="flex-1 p-6 custom-scroll overflow-y-auto">
+          <div className="flex-1 p-6 md:p-8 custom-scroll overflow-y-auto">
             <AnimatePresence mode="wait">
               {selectedItem ? (
-                <motion.div key={selectedItem.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="space-y-6">
+                <motion.div key={selectedItem.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="space-y-8">
                   
-                  <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
-                    <p className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                      {selectedItem.source} • STAFF REPORTER • {selectedItem.dateString} AT {selectedItem.timeString}
+                  <div className="border-b border-slate-800 pb-6">
+                    <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-500 mb-3 flex items-center gap-2">
+                      <Target className="w-3 h-3" /> IDENTIFIED SIGNAL • {selectedItem.timeString}
                     </p>
-                    <h2 className="text-xl md:text-2xl font-black text-slate-900 dark:text-white leading-tight mt-2 tracking-tight">
-                      {selectedItem.title}
+                    <h2 className="text-2xl md:text-3xl font-black text-white leading-[1.2] tracking-tight font-serif">
+                      {sanitizeTitle(selectedItem.title)}
                     </h2>
                   </div>
 
                   <button 
                     onClick={toggleVoiceSummary}
-                    className={`w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all ${isSpeaking ? 'bg-cyan-500/10 border-cyan-400 text-cyan-600' : 'bg-slate-50 dark:bg-slate-950/40 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900'}`}
+                    className={`w-full flex items-center justify-between p-4 rounded-xl border text-left transition-all ${isSpeaking ? 'bg-cyan-500/10 border-cyan-500/50 text-cyan-400' : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'}`}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-full ${isSpeaking ? 'bg-cyan-500 text-white animate-pulse' : 'bg-slate-200 dark:bg-slate-800'}`}>
-                        {isSpeaking ? <Square className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
+                    <div className="flex items-center gap-4">
+                      <div className={`p-2.5 rounded-full ${isSpeaking ? 'bg-cyan-500 text-white animate-pulse' : 'bg-slate-800'}`}>
+                        {isSpeaking ? <Square className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
                       </div>
                       <div>
-                        <p className="text-xs font-bold font-mono">Listen to Takeaways (AI Voice)</p>
-                        <p className="text-[10px] text-slate-400 mt-0.5">{isSpeaking ? 'Click to interrupt processing...' : 'Synthesize speech ledger stream'}</p>
+                        <p className="text-xs font-bold font-mono tracking-widest uppercase text-white">Neural Voice Synthesis</p>
+                        <p className="text-[10px] text-slate-500 mt-1 font-mono">{isSpeaking ? 'INTERRUPT STREAM...' : 'GENERATE AUDIO DOSSIER'}</p>
                       </div>
                     </div>
-                    <Volume2 className={`w-4 h-4 ${isSpeaking ? 'text-cyan-500 animate-bounce' : 'text-slate-400'}`} />
+                    <Volume2 className={`w-5 h-5 ${isSpeaking ? 'text-cyan-400 animate-bounce' : 'text-slate-600'}`} />
                   </button>
 
-                  <div className="border border-slate-900 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-950 overflow-hidden shadow-sm">
-                    <div className="bg-slate-50 dark:bg-slate-900 px-4 py-2.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
-                      <span className="text-[10px] font-black uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                        ⚡ Key Takeaways
-                      </span>
-                    </div>
-                    <div className="p-4 bg-slate-50/50 dark:bg-slate-950/20">
-                      <ul className="space-y-2.5">
-                        <li className="text-xs font-medium text-slate-900 dark:text-slate-100 flex items-start gap-2.5 leading-relaxed">
-                          <span className="text-slate-900 dark:text-white mt-1">✦</span>
-                          <span>{selectedItem.title}</span>
-                        </li>
-                        <li className="text-xs font-medium text-slate-500 dark:text-slate-400 flex items-start gap-2.5 leading-relaxed">
-                          <span className="text-slate-400 mt-1">✦</span>
-                          <span>Global operations update extracted cleanly via live feed routing channels under the {activeCategory} sector mapping index.</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div 
-                    style={{ fontSize: `${13 + textSizeModifier}px` }}
-                    className="font-sans leading-relaxed tracking-normal space-y-1 font-medium transition-all"
-                  >
+                  <div className="font-sans min-h-[200px]">
                     {aiLoading ? (
-                      <div className="p-6 border border-dashed border-slate-200 dark:border-slate-800 rounded-xl flex flex-col items-center justify-center gap-2">
-                        <RefreshCw className="w-5 h-5 animate-spin text-cyan-500" />
-                        <p className="text-[10px] font-mono uppercase font-bold text-slate-400 tracking-wider">Parsing Deep Analytics via {aiProvider}...</p>
+                      <div className="p-10 border border-slate-800 rounded-xl flex flex-col items-center justify-center gap-4 bg-[#0a0a0a]">
+                        <RefreshCw className="w-6 h-6 animate-spin text-cyan-500" />
+                        <p className="text-[10px] font-mono uppercase font-bold text-slate-500 tracking-[0.2em]">Synthesizing Macro Telemetry...</p>
                       </div>
                     ) : aiAnalysis ? (
                       <div className="pt-2">
@@ -638,15 +655,15 @@ export default function DeepIntelligencePlatform() {
                     ) : null}
                   </div>
 
-                  <div className="border border-slate-200 dark:border-slate-800 rounded-xl bg-slate-50 dark:bg-slate-950/40 p-4 space-y-3">
+                  <div className="border border-slate-800 rounded-xl bg-[#0a0a0a] p-5 space-y-4">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-[10px] font-black tracking-widest uppercase font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                        ✦ Ask Mohit's Intelligence AI
+                      <h4 className="text-[10px] font-black tracking-widest uppercase font-mono text-slate-400 flex items-center gap-2">
+                        <Cpu className="w-3.5 h-3.5 text-cyan-500" /> DIRECT NEURAL QUERY
                       </h4>
-                      <div className="flex bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded p-0.5">
-                        <button onClick={() => changeProvider('llama-cloud')} className={`px-2 py-0.5 text-[9px] font-bold rounded transition-colors ${aiProvider === 'llama-cloud' ? 'bg-cyan-500 text-white' : 'text-slate-400 hover:text-slate-600'}`}>Llama 3</button>
-                        <button onClick={() => changeProvider('gemini')} className={`px-2 py-0.5 text-[9px] font-bold rounded transition-colors ${aiProvider === 'gemini' ? 'bg-cyan-500 text-white' : 'text-slate-400 hover:text-slate-600'}`}>Gemini</button>
-                        <button onClick={() => changeProvider('openai')} className={`px-2 py-0.5 text-[9px] font-bold rounded transition-colors ${aiProvider === 'openai' ? 'bg-cyan-500 text-white' : 'text-slate-400 hover:text-slate-600'}`}>OpenAI</button>
+                      <div className="flex bg-slate-900 border border-slate-800 rounded p-1">
+                        <button onClick={() => changeProvider('llama-cloud')} className={`px-2.5 py-1 text-[9px] font-bold rounded font-mono tracking-wider transition-colors ${aiProvider === 'llama-cloud' ? 'bg-cyan-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}>LLAMA</button>
+                        <button onClick={() => changeProvider('gemini')} className={`px-2.5 py-1 text-[9px] font-bold rounded font-mono tracking-wider transition-colors ${aiProvider === 'gemini' ? 'bg-cyan-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}>GEMINI</button>
+                        <button onClick={() => changeProvider('openai')} className={`px-2.5 py-1 text-[9px] font-bold rounded font-mono tracking-wider transition-colors ${aiProvider === 'openai' ? 'bg-cyan-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}>OPENAI</button>
                       </div>
                     </div>
                     
@@ -655,15 +672,15 @@ export default function DeepIntelligencePlatform() {
                         type="text" 
                         value={customQuery} 
                         onChange={(e) => setCustomQuery(e.target.value)} 
-                        placeholder="Query dataset parameters or request targeted summaries..."
-                        className="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs rounded-lg px-3 py-2 text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                        placeholder="Interrogate this data node..."
+                        className="flex-1 bg-slate-950 border border-slate-800 text-xs rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-cyan-500/50 transition-colors font-mono"
                         onKeyDown={(e) => e.key === 'Enter' && executeCustomAiQuery()} 
                       />
                       <button 
                         onClick={executeCustomAiQuery} 
-                        className="bg-slate-900 dark:bg-white text-white dark:text-slate-950 px-3.5 rounded-lg text-xs font-bold hover:scale-105 transition-transform"
+                        className="bg-white text-black px-4 rounded-lg hover:bg-cyan-400 transition-colors flex items-center justify-center"
                       >
-                        <Send className="w-3.5 h-3.5"/>
+                        <Send className="w-4 h-4"/>
                       </button>
                     </div>
                   </div>
@@ -672,15 +689,15 @@ export default function DeepIntelligencePlatform() {
                     href={selectedItem.link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="w-full py-3 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-950 rounded-lg font-bold text-xs tracking-wider uppercase flex justify-center items-center gap-2 transition-all shadow-md text-center"
+                    className="w-full py-3.5 bg-slate-900 hover:bg-cyan-900/30 border border-slate-800 hover:border-cyan-500/50 text-cyan-400 rounded-lg font-bold text-[10px] font-mono tracking-[0.2em] uppercase flex justify-center items-center gap-2 transition-all text-center"
                   >
-                    Read Original Source <ArrowUpRight className="w-4 h-4" />
+                    ACCESS RAW SOURCE NODE <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </motion.div>
               ) : (
-                <div className="h-full flex flex-col items-center justify-center text-slate-400 opacity-60">
-                  <Target className="w-16 h-16 stroke-1 mb-4" />
-                  <p className="text-xs font-mono">Select a target stream node to parse comprehensive dossier models.</p>
+                <div className="h-full flex flex-col items-center justify-center text-slate-600 opacity-60">
+                  <Target className="w-16 h-16 stroke-1 mb-6 text-slate-700" />
+                  <p className="text-xs font-mono uppercase tracking-widest text-center max-w-xs leading-relaxed">Awaiting node selection to initiate deep semantic parsing.</p>
                 </div>
               )}
             </AnimatePresence>
