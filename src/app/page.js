@@ -1,8 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// Add these to your existing imports
-import { ..., ShieldAlert, Lock, Fingerprint } from 'lucide-react';
 import { 
   RefreshCw, ArrowUpRight, Target, Cpu, Layers, DollarSign, ShoppingBag, Radio, 
   FileText, Search, Clock, Sun, Moon, Send, BrainCircuit, Calendar, TrendingUp, 
