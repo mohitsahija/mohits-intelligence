@@ -7,7 +7,8 @@ import {
   RefreshCw, ArrowUpRight, Target, Cpu, Layers, DollarSign, ShoppingBag, Radio, 
   FileText, Search, Clock, Sun, Moon, Send, BrainCircuit, Calendar, TrendingUp, 
   TrendingDown, Minus, Menu, X, CheckCircle2, CreditCard, Plane, Building, 
-  Activity, Flame, Globe, Film, HeartPulse, ChevronDown, Trophy, Play, Square, Volume2, Command
+  Activity, Flame, Globe, Film, HeartPulse, ChevronDown, Trophy, Play, Square, Volume2, Command, Hexagon, Landmark, Briefcase, 
+  ShieldAlert, Lock, Fingerprint // Add these three
 } from 'lucide-react';
 
 const SIDEBAR_GROUPS = [
