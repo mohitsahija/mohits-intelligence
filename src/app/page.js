@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+// Add these to your existing imports
+import { ..., ShieldAlert, Lock, Fingerprint } from 'lucide-react';
 import { 
   RefreshCw, ArrowUpRight, Target, Cpu, Layers, DollarSign, ShoppingBag, Radio, 
   FileText, Search, Clock, Sun, Moon, Send, BrainCircuit, Calendar, TrendingUp, 
@@ -39,11 +41,14 @@ const SIDEBAR_GROUPS = [
       "World Money & Stocks": { icon: <TrendingUp className="w-5 h-5" />, color: "bg-teal-600 text-white", desc: "Global markets, shares, and IPOs" }
     }
   },
-  {
+{
     title: "Core Intelligence",
     categories: {
       "SME & Corporate Expansion": { icon: <Target className="w-5 h-5" />, color: "bg-emerald-600 text-white", desc: "B2B Lead Gen: Facilities & Operations" },
-      "AI & Tools": { icon: <Cpu className="w-5 h-5" />, color: "bg-blue-600 text-white", desc: "Latest artificial intelligence software" },
+      "AI & Neural Tech": { icon: <Cpu className="w-5 h-5" />, color: "bg-blue-600 text-white", desc: "Latest artificial intelligence software" },
+      "Cybersecurity & Threats": { icon: <ShieldAlert className="w-5 h-5" />, color: "bg-red-600 text-white", desc: "Threat intel, vulnerabilities & defense" },
+      "Data Privacy & Compliance": { icon: <Lock className="w-5 h-5" />, color: "bg-amber-600 text-white", desc: "Regulatory standards & privacy protocols" },
+      "Digital Identity": { icon: <Fingerprint className="w-5 h-5" />, color: "bg-indigo-600 text-white", desc: "Auth systems, biometrics & KYC" },
       "Ads Creatives & Meta": { icon: <Radio className="w-5 h-5" />, color: "bg-purple-600 text-white", desc: "Marketing and platform algorithms" },
       "Tech Innovations": { icon: <Layers className="w-5 h-5" />, color: "bg-slate-800 text-white", desc: "Hardware and enterprise technology" }
     }
