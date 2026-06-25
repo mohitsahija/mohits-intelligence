@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    const { headline, source, customPrompt, provider = 'llama-cloud' } = await request.json();
+    const { headline, source, customPrompt, provider = 'gemini' } = await request.json();
     
-    // Optimized system instruction: shorter tokens = faster generation
-    const systemInstruction = `You are Mohit's Intelligence. Analyze: "${headline}" [Source: ${source}]. Provide a structured summary.
+    const systemInstruction = `You are the core intelligence engine for "Mohit Sahija's Intelligence Dashboard". 
+    Provide a structured study guide based on the provided headline and source.
+    DO NOT use markdown asterisks (**). Use uppercase letters and simple symbols (✦ or ■).
     
-FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
+    FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
     
     ■ COMPREHENSIVE OVERVIEW
     (Provide a 2-paragraph maximum summary of the event, match, or news item. Keep it professional, clear, and easy to read.)
@@ -24,15 +25,18 @@ FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
 
 
     const userMessage = customPrompt 
-      ? `Query: "${customPrompt}".` 
-      : `Analyze this news: "${headline}" [${source}].`;
+      ? `Query: "${customPrompt}". Context: "${headline}" [Source: ${source}].` 
+      : `Analyze: "${headline}" [Source: ${source}].`;
 
-    // Strict 15-second timeout logic
+    // Controller for timeout
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);
 
     let responseText = "";
 
+    // ==========================================
+    // PROVIDER 1: LLAMA 3.1 (FAST)
+    // ==========================================
     if (provider === 'llama-cloud') {
       const apiKey = process.env.OPENROUTER_API_KEY;
       if (!apiKey) throw new Error("API Key missing");
@@ -41,27 +45,49 @@ FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
-          'HTTP-Referer': 'https://mohitsahija.info',
           'Content-Type': 'application/json'
         },
-        signal: controller.signal, // Attaching timeout
+        signal: controller.signal,
         body: JSON.stringify({
-          // ⚡ UPDATED: Using the fastest dedicated model instead of the generic load balancer
           model: 'meta-llama/llama-3.1-8b-instruct:free',
-          messages: [
-            { role: 'system', content: systemInstruction },
-            { role: 'user', content: userMessage }
-          ],
+          messages: [{ role: 'system', content: systemInstruction }, { role: 'user', content: userMessage }],
           temperature: 0.2,
-          max_tokens: 500 // ⚡ Limit length to force speed
+          max_tokens: 600
         })
       });
 
       const data = await res.json();
       clearTimeout(timeoutId);
       
-      if (data.error) throw new Error(data.error.message);
+      // Safety check: ensure response structure exists
+      if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+        throw new Error(data.error?.message || "AI failed to return a valid response.");
+      }
       responseText = data.choices[0].message.content;
+
+    // ==========================================
+    // PROVIDER 2: GOOGLE GEMINI
+    // ==========================================
+    } else if (provider === 'gemini') {
+      const apiKey = process.env.GEMINI_API_KEY;
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
+        body: JSON.stringify({
+          system_instruction: { parts: { text: systemInstruction } },
+          contents: [{ parts: [{ text: userMessage }] }],
+          generationConfig: { temperature: 0.2 }
+        })
+      });
+      
+      const data = await res.json();
+      clearTimeout(timeoutId);
+      
+      if (!data.candidates || !data.candidates[0].content) {
+        throw new Error("Gemini returned an empty response.");
+      }
+      responseText = data.candidates[0].content.parts[0].text;
     }
 
     return NextResponse.json({ response: responseText });
@@ -69,7 +95,7 @@ FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
   } catch (err) {
     console.error("AI Error:", err);
     return NextResponse.json({ 
-      error: err.name === 'AbortError' ? "The AI is taking too long to respond. Please try again." : err.message 
+      error: err.name === 'AbortError' ? "Request timed out." : err.message 
     }, { status: 500 });
   }
 }
