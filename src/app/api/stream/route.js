@@ -31,7 +31,11 @@ const LIVE_FEEDS = {
 
   // --- CORE INTELLIGENCE ---
   "SME & Corporate Expansion": "https://news.google.com/rss/search?q=(announces+new+facility+OR+opens+new+office+OR+infrastructure+expansion)+AND+(India+OR+Global)+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
-  "AI & Tools": "https://news.google.com/rss/search?q=Artificial+Intelligence+software+tools+updates+when:2d&hl=en-US&gl=US&ceid=US:en",
+  "AI & Neural Tech": "https://news.google.com/rss/search?q=Artificial+Intelligence+software+tools+updates+when:2d&hl=en-US&gl=US&ceid=US:en",
+  // ⚡ ADDED CYBERSECURITY FEED
+  "Cybersecurity & Threats": "https://news.google.com/rss/search?q=Cybersecurity+threats+data+breach+vulnerabilities+when:2d&hl=en-US&gl=US&ceid=US:en",
+  "Data Privacy & Compliance": "https://news.google.com/rss/search?q=Data+privacy+GDPR+compliance+news+when:2d&hl=en-US&gl=US&ceid=US:en",
+  "Digital Identity": "https://news.google.com/rss/search?q=Digital+identity+authentication+biometrics+news+when:2d&hl=en-US&gl=US&ceid=US:en",
   "Ads Creatives & Meta": "https://news.google.com/rss/search?q=Meta+Facebook+Ads+Algorithm+Creative+Marketing+when:2d&hl=en-US&gl=US&ceid=US:en",
   "Tech Innovations": "https://news.google.com/rss/search?q=Enterprise+Technology+Hardware+Networking+News+when:2d&hl=en-US&gl=US&ceid=US:en",
   
