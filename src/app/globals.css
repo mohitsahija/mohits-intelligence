@@ -4,76 +4,71 @@
 
 @layer base {
   :root {
-    --background: 240 5% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-border: 214 32% 91%;
-    --grid-color: rgba(148, 163, 184, 0.08);
+    --bg: 220 20% 97%;
+    --panel: 0 0% 100%;
+    --text: 220 20% 15%;
+    --accent: 217 91% 60%;
+    --border: 214 32% 91%;
   }
-  
+
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 210 20% 98%;
-    --card: 222 47% 7%;
-    --card-border: 217 22% 14%;
-    --grid-color: rgba(255, 255, 255, 0.02);
+    --bg: 222 47% 2%;
+    --panel: 222 47% 5%;
+    --text: 210 20% 98%;
+    --accent: 190 95% 40%;
+    --border: 217 22% 14%;
+  }
+
+  body {
+    @apply bg-[hsl(var(--bg))] text-[hsl(var(--text))] antialiased selection:bg-cyan-500/30;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
   }
 }
 
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-  overflow: hidden; /* Prevent body scroll to enforce app-like internal scrolling */
+@layer components {
+  /* The "Terminal" Container */
+  .terminal-base {
+    @apply relative min-h-screen overflow-hidden;
+    background: radial-gradient(circle at 50% -20%, hsl(var(--accent) / 0.15), transparent 60%);
+  }
+
+  /* Glassmorphism Panel */
+  .panel-glass {
+    @apply bg-[hsl(var(--panel)/0.6)] backdrop-blur-2xl border border-[hsl(var(--border))] shadow-2xl;
+  }
+
+  /* Glowing Text */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(var(--accent), 0.4);
+  }
+
+  /* Custom Scrollbar */
+  .custom-scroll {
+    @apply overflow-y-auto;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
 }
 
-.luxury-grid {
-  background-size: 35px 35px;
-  background-image: 
-    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+@layer utilities {
+  /* Subtle Grid */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Ticker animation */
+  .ticker-wrap { width: 100%; overflow: hidden; white-space: nowrap; }
+  .ticker-move { display: inline-block; animation: tickerRun 50s linear infinite; }
+  @keyframes tickerRun {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
 }
 
-@keyframes shimmer {
-  100% { transform: translateX(100%); }
-}
-
-.shimmer-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer-bg::after {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  transform: translateX(-100%);
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.06) 20%,
-    rgba(255, 255, 255, 0.1) 60%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  animation: shimmer 2s infinite;
-  content: '';
-}
-
-/* Perfected Scrollbar for robust internal scrolling */
-.custom-scroll {
-  overflow-y: auto;
-  overscroll-behavior-y: contain; /* Prevents pull-to-refresh bouncing on desktop */
-}
-.custom-scroll::-webkit-scrollbar { width: 6px; }
-.custom-scroll::-webkit-scrollbar-track { background: transparent; }
-.custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-.custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-.dark .custom-scroll::-webkit-scrollbar-thumb { background: #334155; }
-.dark .custom-scroll::-webkit-scrollbar-thumb:hover { background: #475569; }
-
-.ticker-wrap { width: 100%; overflow: hidden; white-space: nowrap; }
-.ticker-move { display: inline-block; animation: tickerRun 40s linear infinite; }
-@keyframes tickerRun {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
+/* Micro-animations for buttons */
+button, .clickable {
+  @apply transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
 }
