@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="terminal-base cyber-grid min-h-screen">
+      <body className="cyber-grid min-h-screen">
     </html>
   );
 }
