@@ -231,21 +231,42 @@ export default function DeepIntelligencePlatform() {
 
     try {
       const chatRes = await fetch('/api/chat', {
-        method: 'POST', 
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ headline: item.title, source: item.source, provider: forceProvider })
       });
-      const chatData = await chatRes.json();
-      
-      if (chatData.error) {
-        setAiAnalysis(`❌ [API CONNECTION FAILED]:\n${chatData.error}`);
+
+      const isStream = chatRes.headers.get('X-Stream') === 'true';
+
+      if (isStream) {
+        setAiLoading(false);
+        const reader = chatRes.body.getReader();
+        const decoder = new TextDecoder();
+        let fullText = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          fullText += chunk;
+          setAiAnalysis(fullText);
+        }
+
+        setAnalysisCache(prev => ({ ...prev, [cacheKey]: fullText }));
+
       } else {
-        setAiAnalysis(chatData.response);
-        setAnalysisCache(prev => ({ ...prev, [cacheKey]: chatData.response }));
+        const chatData = await chatRes.json();
+        if (chatData.error) {
+          setAiAnalysis(`❌ [API CONNECTION FAILED]:\n${chatData.error}`);
+        } else {
+          setAiAnalysis(chatData.response);
+          setAnalysisCache(prev => ({ ...prev, [cacheKey]: chatData.response }));
+        }
+        setAiLoading(false);
       }
+
     } catch (err) {
       setAiAnalysis(`❌ [NETWORK ERROR]: Failed to contact backend server.`);
-    } finally {
       setAiLoading(false);
     }
   };
@@ -254,22 +275,48 @@ export default function DeepIntelligencePlatform() {
     if (!customQuery.trim() || !selectedItem) return;
     setAiLoading(true);
     setAiAnalysis("");
+
     try {
       const chatRes = await fetch('/api/chat', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ headline: selectedItem.title, source: selectedItem.source, customPrompt: customQuery, provider: aiProvider })
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          headline: selectedItem.title,
+          source: selectedItem.source,
+          customPrompt: customQuery,
+          provider: aiProvider
+        })
       });
-      const chatData = await chatRes.json();
-      
-      if (chatData.error) {
-         setAiAnalysis(`❌ [ERROR]: ${chatData.error}`);
+
+      const isStream = chatRes.headers.get('X-Stream') === 'true';
+
+      if (isStream) {
+        setAiLoading(false);
+        const reader = chatRes.body.getReader();
+        const decoder = new TextDecoder();
+        let fullText = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          fullText += chunk;
+          setAiAnalysis(fullText);
+        }
       } else {
-         setAiAnalysis(chatData.response);
+        const chatData = await chatRes.json();
+        if (chatData.error) {
+          setAiAnalysis(`❌ [ERROR]: ${chatData.error}`);
+        } else {
+          setAiAnalysis(chatData.response);
+        }
+        setAiLoading(false);
       }
+
     } catch (err) {
       setAiAnalysis("❌ [NETWORK ERROR]: Failed to process custom query.");
-    } finally {
       setAiLoading(false);
+    } finally {
       setCustomQuery("");
     }
   };
