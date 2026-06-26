@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="cyber-grid min-h-screen antialiased">{children}</body>
+      <body className="terminal-base cyber-grid min-h-screen">
     </html>
   );
 }
