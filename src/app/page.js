@@ -14,26 +14,26 @@ const SIDEBAR_GROUPS = [
     title: "Trending & Viral",
     categories: {
       "Trending Now (Breaking)": { icon: <Flame className="w-4 h-4" />, iconClass: "icon-rose",    desc: "Global breaking news and alerts" },
-      "Viral Content & Buzz":    { icon: <Activity className="w-4 h-4" />, iconClass: "icon-pink",    desc: "Social media trends & buzzworthy topics" },
-      "Most Searched Topics":    { icon: <Search className="w-4 h-4" />,   iconClass: "icon-indigo",  desc: "Top queries across search engines" }
+      "Viral Content & Buzz":    { icon: <Activity className="w-4 h-4" />, iconClass: "icon-pink",  desc: "Social media trends & buzzworthy topics" },
+      "Most Searched Topics":    { icon: <Search className="w-4 h-4" />,   iconClass: "icon-indigo",desc: "Top queries across search engines" }
     }
   },
   {
     title: "Global Sports Arena",
     categories: {
-      "Cricket World":           { icon: <Trophy className="w-4 h-4" />,   iconClass: "icon-green",   desc: "Live scores, match schedules, and player stats" },
-      "Football & Transfers":    { icon: <Activity className="w-4 h-4" />, iconClass: "icon-blue",    desc: "League standings, results, and transfer tickers" },
-      "Basketball & NBA":        { icon: <Flame className="w-4 h-4" />,    iconClass: "icon-orange",  desc: "Tournament analysis, rankings, and records" },
-      "Tennis & Racquet Sports": { icon: <Target className="w-4 h-4" />,   iconClass: "icon-lime",    desc: "Grand Slam draws, rankings, and results" },
-      "Combat Sports (MMA/Box)": { icon: <Layers className="w-4 h-4" />,   iconClass: "icon-crimson", desc: "UFC fight cards, division updates, and news" }
+      "Cricket World":           { icon: <Trophy className="w-4 h-4" />,   iconClass: "icon-green",   desc: "Live scores, match schedules, player stats" },
+      "Football & Transfers":    { icon: <Activity className="w-4 h-4" />, iconClass: "icon-blue",    desc: "League standings, results, transfer tickers" },
+      "Basketball & NBA":        { icon: <Flame className="w-4 h-4" />,    iconClass: "icon-orange",  desc: "Tournament analysis, rankings, records" },
+      "Tennis & Racquet Sports": { icon: <Target className="w-4 h-4" />,   iconClass: "icon-lime",    desc: "Grand Slam draws, rankings, results" },
+      "Combat Sports (MMA/Box)": { icon: <Layers className="w-4 h-4" />,   iconClass: "icon-crimson", desc: "UFC fight cards, division updates, news" }
     }
   },
   {
     title: "Finance & Cards Hub",
     categories: {
-      "Credit & Debit Cards":      { icon: <CreditCard className="w-4 h-4" />, iconClass: "icon-green",  desc: "Bank offers, policies, and card launches" },
-      "Rewards & Cashback Offers": { icon: <DollarSign className="w-4 h-4" />, iconClass: "icon-amber",  desc: "Points, fuel cards, and cashback deals" },
-      "Travel & Forex Cards":      { icon: <Plane className="w-4 h-4" />,      iconClass: "icon-cyan",   desc: "International spending and forex rates" },
+      "Credit & Debit Cards":      { icon: <CreditCard className="w-4 h-4" />, iconClass: "icon-green",  desc: "Bank offers, policies, card launches" },
+      "Rewards & Cashback Offers": { icon: <DollarSign className="w-4 h-4" />, iconClass: "icon-amber",  desc: "Points, fuel cards, cashback deals" },
+      "Travel & Forex Cards":      { icon: <Plane className="w-4 h-4" />,      iconClass: "icon-cyan",   desc: "International spending & forex rates" },
       "Business & Virtual Cards":  { icon: <Building className="w-4 h-4" />,   iconClass: "icon-slate",  desc: "Corporate expense & enterprise cards" },
       "World Money & Stocks":      { icon: <TrendingUp className="w-4 h-4" />, iconClass: "icon-teal",   desc: "Global markets, shares, and IPOs" }
     }
@@ -41,500 +41,431 @@ const SIDEBAR_GROUPS = [
   {
     title: "Core Intelligence",
     categories: {
-      "SME & Corporate Expansion": { icon: <Target className="w-4 h-4" />,      iconClass: "icon-green",   desc: "B2B Lead Gen: Facilities & Operations" },
-      "AI & Neural Tech":          { icon: <Cpu className="w-4 h-4" />,         iconClass: "icon-blue",    desc: "Latest artificial intelligence software" },
-      "Cybersecurity & Threats":   { icon: <ShieldAlert className="w-4 h-4" />, iconClass: "icon-red",     desc: "Threat intel, vulnerabilities & defense" },
-      "Data Privacy & Compliance": { icon: <Lock className="w-4 h-4" />,        iconClass: "icon-amber",   desc: "Regulatory standards & privacy protocols" },
-      "Digital Identity":          { icon: <Fingerprint className="w-4 h-4" />, iconClass: "icon-indigo",  desc: "Auth systems, biometrics & KYC" },
-      "Ads Creatives & Meta":      { icon: <Radio className="w-4 h-4" />,       iconClass: "icon-purple",  desc: "Marketing and platform algorithms" },
-      "Tech Innovations":          { icon: <Layers className="w-4 h-4" />,      iconClass: "icon-slate",   desc: "Hardware and enterprise technology" }
+      "SME & Corporate Expansion": { icon: <Target className="w-4 h-4" />,      iconClass: "icon-green",  desc: "B2B Lead Gen: Facilities & Operations" },
+      "AI & Neural Tech":          { icon: <Cpu className="w-4 h-4" />,         iconClass: "icon-blue",   desc: "Latest artificial intelligence software" },
+      "Cybersecurity & Threats":   { icon: <ShieldAlert className="w-4 h-4" />, iconClass: "icon-red",    desc: "Threat intel, vulnerabilities & defense" },
+      "Data Privacy & Compliance": { icon: <Lock className="w-4 h-4" />,        iconClass: "icon-amber",  desc: "Regulatory standards & privacy protocols" },
+      "Digital Identity":          { icon: <Fingerprint className="w-4 h-4" />, iconClass: "icon-indigo", desc: "Auth systems, biometrics & KYC" },
+      "Ads Creatives & Meta":      { icon: <Radio className="w-4 h-4" />,       iconClass: "icon-purple", desc: "Marketing and platform algorithms" },
+      "Tech Innovations":          { icon: <Layers className="w-4 h-4" />,      iconClass: "icon-slate",  desc: "Hardware and enterprise technology" }
     }
   },
   {
     title: "Everyday Essentials",
     categories: {
-      "E-commerce & Retail":    { icon: <ShoppingBag className="w-4 h-4" />,  iconClass: "icon-orange", desc: "Online shopping & retail industry" },
-      "Real Estate & Property": { icon: <Building className="w-4 h-4" />,      iconClass: "icon-blue",   desc: "Housing, commercial, and property markets" },
-      "Health & Lifestyle":     { icon: <HeartPulse className="w-4 h-4" />,    iconClass: "icon-rose",   desc: "Wellness, fitness, and living" },
-      "Global Entertainment":   { icon: <Film className="w-4 h-4" />,          iconClass: "icon-purple", desc: "Movies, sports, and celebrity culture" }
+      "E-commerce & Retail":    { icon: <ShoppingBag className="w-4 h-4" />, iconClass: "icon-orange", desc: "Online shopping & retail industry" },
+      "Real Estate & Property": { icon: <Building className="w-4 h-4" />,    iconClass: "icon-blue",   desc: "Housing, commercial, property markets" },
+      "Health & Lifestyle":     { icon: <HeartPulse className="w-4 h-4" />,  iconClass: "icon-rose",   desc: "Wellness, fitness, and living" },
+      "Global Entertainment":   { icon: <Film className="w-4 h-4" />,        iconClass: "icon-purple", desc: "Movies, sports, and celebrity culture" }
     }
   }
 ];
 
-const MohitIntelligenceLogo = ({ animated = false }) => (
-  <div className="relative flex items-center justify-center w-10 h-10 shrink-0">
-    <motion.div
-      className="absolute inset-0 rounded-full"
-      style={{ background: 'var(--accent)', opacity: 0.15, filter: 'blur(10px)' }}
-      animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.25, 0.1] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    />
-    <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="z-10" style={{ color: 'var(--text-primary)' }}>
-      <motion.path d="M20 80V30L50 55L80 30V80" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"
+const Logo = ({ animated = false }) => (
+  <div style={{ position: 'relative', width: 36, height: 36, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <motion.path d="M20 80V30L50 55L80 30V80" stroke="#0891B2" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round"
         initial={animated ? { pathLength: 0, opacity: 0 } : { pathLength: 1, opacity: 1 }}
-        animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2, ease: "easeInOut" }} />
-      <motion.circle cx="50" cy="55" r="6.5" fill="var(--accent)"
+        animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1.8, ease: 'easeInOut' }} />
+      <motion.circle cx="50" cy="55" r="7" fill="#0891B2"
         initial={animated ? { scale: 0 } : { scale: 1 }} animate={{ scale: 1 }}
-        transition={{ delay: animated ? 1.5 : 0, type: "spring", stiffness: 200, damping: 10 }} />
-      <motion.path d="M50 55V85" stroke="var(--accent)" strokeWidth="6" strokeLinecap="round"
+        transition={{ delay: animated ? 1.4 : 0, type: 'spring', stiffness: 200 }} />
+      <motion.path d="M50 55V84" stroke="#0891B2" strokeWidth="6" strokeLinecap="round"
         initial={animated ? { pathLength: 0 } : { pathLength: 1 }} animate={{ pathLength: 1 }}
-        transition={{ delay: animated ? 1.8 : 0, duration: 0.8, ease: "easeOut" }} />
+        transition={{ delay: animated ? 1.7 : 0, duration: 0.7 }} />
     </svg>
   </div>
 );
 
-const getTimeAgo = (timestamp) => {
-  const seconds = Math.floor((new Date() - timestamp) / 1000);
-  let interval = seconds / 31536000;
-  if (interval > 1) return Math.floor(interval) + "y ago";
-  interval = seconds / 2592000;
-  if (interval > 1) return Math.floor(interval) + "mo ago";
-  interval = seconds / 86400;
-  if (interval > 1) return Math.floor(interval) + "d ago";
-  interval = seconds / 3600;
-  if (interval > 1) return Math.floor(interval) + "h ago";
-  interval = seconds / 60;
-  if (interval > 1) return Math.floor(interval) + "m ago";
-  return Math.floor(seconds) + "s ago";
+const getTimeAgo = (ts) => {
+  const s = Math.floor((new Date() - ts) / 1000);
+  if (s < 60) return s + 's ago';
+  if (s < 3600) return Math.floor(s/60) + 'm ago';
+  if (s < 86400) return Math.floor(s/3600) + 'h ago';
+  if (s < 2592000) return Math.floor(s/86400) + 'd ago';
+  return Math.floor(s/2592000) + 'mo ago';
 };
 
-const Toast = ({ message, isVisible }) => (
-  <AnimatePresence>
-    {isVisible && (
-      <motion.div
-        initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
-        className="intel-toast fixed bottom-6 right-6 z-50"
-      >
-        <CheckCircle2 style={{ width: 14, height: 14 }} /> {message}
-      </motion.div>
-    )}
-  </AnimatePresence>
-);
-
-export default function DeepIntelligencePlatform() {
-  const [isIntroPlaying, setIsIntroPlaying]   = useState(true);
-  const [isDarkMode, setIsDarkMode]           = useState(true);
-  const [data, setData]                       = useState({});
-  const [tickerData, setTickerData]           = useState([]);
-  const [activeCategory, setActiveCategory]   = useState("Cricket World");
-  const [expandedGroups, setExpandedGroups]   = useState({ "Global Sports Arena": true });
-  const [selectedItem, setSelectedItem]       = useState(null);
-  const [isSyncing, setIsSyncing]             = useState(true);
-  const [toastMsg, setToastMsg]               = useState("");
-  const [searchQuery, setSearchQuery]         = useState("");
-  const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
-  const [analysisCache, setAnalysisCache]     = useState({});
-  const [cmdPaletteOpen, setCmdPaletteOpen]   = useState(false);
-  const [cmdSearch, setCmdSearch]             = useState("");
-  const [aiProvider, setAiProvider]           = useState("gemini");
-  const [aiAnalysis, setAiAnalysis]           = useState("");
-  const [aiLoading, setAiLoading]             = useState(false);
-  const [customQuery, setCustomQuery]         = useState("");
-  const [textSizeModifier, setTextSizeModifier] = useState(0);
-  const [isSpeaking, setIsSpeaking]           = useState(false);
-  const [isStreaming, setIsStreaming]         = useState(false);
-  const [time, setTime]                       = useState({ ahmedabad: '', ny: '', lon: '' });
+export default function IntelligencePlatform() {
+  const [isIntro, setIsIntro]             = useState(true);
+  const [isDark, setIsDark]               = useState(false); // ← LIGHT MODE DEFAULT
+  const [data, setData]                   = useState({});
+  const [ticker, setTicker]               = useState([]);
+  const [activeCategory, setActiveCategory] = useState('Cricket World');
+  const [expandedGroups, setExpandedGroups] = useState({ 'Global Sports Arena': true });
+  const [selectedItem, setSelectedItem]   = useState(null);
+  const [isSyncing, setIsSyncing]         = useState(true);
+  const [toast, setToast]                 = useState('');
+  const [searchQuery, setSearchQuery]     = useState('');
+  const [mobileMenu, setMobileMenu]       = useState(false);
+  const [cache, setCache]                 = useState({});
+  const [cmdOpen, setCmdOpen]             = useState(false);
+  const [cmdSearch, setCmdSearch]         = useState('');
+  const [provider, setProvider]           = useState('gemini');
+  const [analysis, setAnalysis]           = useState('');
+  const [aiLoading, setAiLoading]         = useState(false);
+  const [isStreaming, setIsStreaming]      = useState(false);
+  const [customQ, setCustomQ]             = useState('');
+  const [textMod, setTextMod]             = useState(0);
+  const [isSpeaking, setIsSpeaking]       = useState(false);
+  const [time, setTime]                   = useState({ ind: '', ny: '', lon: '' });
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); setCmdPaletteOpen(p => !p); }
-      if (e.key === 'Escape') setCmdPaletteOpen(false);
+    const kd = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); setCmdOpen(p => !p); }
+      if (e.key === 'Escape') setCmdOpen(false);
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', kd);
+    return () => window.removeEventListener('keydown', kd);
   }, []);
 
   useEffect(() => {
-    const splashTimer = setTimeout(() => setIsIntroPlaying(false), 2600);
-    const clockInterval = setInterval(() => {
+    setTimeout(() => setIsIntro(false), 2400);
+    const tick = setInterval(() => {
       const now = new Date();
       setTime({
-        ahmedabad: now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata',      hour: '2-digit', minute: '2-digit' }),
-        ny:        now.toLocaleTimeString('en-US', { timeZone: 'America/New_York',  hour: '2-digit', minute: '2-digit' }),
-        lon:       now.toLocaleTimeString('en-US', { timeZone: 'Europe/London',     hour: '2-digit', minute: '2-digit' })
+        ind: now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata',     hour: '2-digit', minute: '2-digit' }),
+        ny:  now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit' }),
+        lon: now.toLocaleTimeString('en-US', { timeZone: 'Europe/London',    hour: '2-digit', minute: '2-digit' }),
       });
     }, 1000);
-    pullRealtimeFeeds(false);
-    return () => { clearTimeout(splashTimer); clearInterval(clockInterval); };
+    fetchFeeds(false);
+    return () => clearInterval(tick);
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDarkMode);
-  }, [isDarkMode]);
+    document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
 
   useEffect(() => {
     if (window.speechSynthesis) { window.speechSynthesis.cancel(); setIsSpeaking(false); }
   }, [selectedItem]);
 
-  const showToast = (msg) => { setToastMsg(msg); setTimeout(() => setToastMsg(""), 3000); };
+  const showToast = (msg) => { setToast(msg); setTimeout(() => setToast(''), 3000); };
 
-  const pullRealtimeFeeds = async (isManual = true) => {
+  const fetchFeeds = async (manual = true) => {
     setIsSyncing(true);
     try {
-      const res = await fetch(`/api/stream?t=${Date.now()}&hash=${Math.random()}`, {
-        cache: 'no-store', headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' }
-      });
-      const freshData = await res.json();
-      setData(freshData.feeds);
-      setTickerData(freshData.ticker);
-      if (isManual) showToast("Live radar synced & verified.");
-      if (freshData.feeds[activeCategory]?.length > 0 && !selectedItem) {
-        handleItemSelection(freshData.feeds[activeCategory][0]);
+      const res = await fetch(`/api/stream?t=${Date.now()}`, { cache: 'no-store' });
+      const d = await res.json();
+      setData(d.feeds); setTicker(d.ticker);
+      if (manual) showToast('Live data synced successfully.');
+      if (d.feeds[activeCategory]?.length > 0 && !selectedItem) {
+        selectItem(d.feeds[activeCategory][0]);
       }
-    } catch {
-      if (isManual) showToast("Sync failed. Check network.");
-    } finally {
-      setIsSyncing(false);
-    }
+    } catch { if (manual) showToast('Sync failed. Check network.'); }
+    finally { setIsSyncing(false); }
   };
 
-  const handleItemSelection = async (item, forceProvider = aiProvider) => {
+  const selectItem = async (item, forceProvider = provider) => {
     setSelectedItem(item);
-    const cacheKey = `${item.id}-${forceProvider}`;
-    if (analysisCache[cacheKey]) {
-      setAiAnalysis(analysisCache[cacheKey]);
-      setAiLoading(false);
-      if (window.innerWidth < 1024) setMobileMenuOpen(false);
-      return;
-    }
-    setAiAnalysis(""); setAiLoading(true); setIsStreaming(false);
-    if (window.innerWidth < 1024) setMobileMenuOpen(false);
+    const key = `${item.id}-${forceProvider}`;
+    if (cache[key]) { setAnalysis(cache[key]); setAiLoading(false); return; }
+    setAnalysis(''); setAiLoading(true); setIsStreaming(false);
+    if (window.innerWidth < 1024) setMobileMenu(false);
     try {
-      const chatRes = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch('/api/chat', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ headline: item.title, source: item.source, provider: forceProvider })
       });
-      const isStream = chatRes.headers.get('X-Stream') === 'true';
-      if (isStream) {
+      if (res.headers.get('X-Stream') === 'true') {
         setAiLoading(false); setIsStreaming(true);
-        const reader = chatRes.body.getReader();
-        const decoder = new TextDecoder();
-        let fullText = "";
+        const reader = res.body.getReader(); const dec = new TextDecoder();
+        let full = '';
         while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          fullText += decoder.decode(value, { stream: true });
-          setAiAnalysis(fullText);
+          const { done, value } = await reader.read(); if (done) break;
+          full += dec.decode(value, { stream: true }); setAnalysis(full);
         }
-        setIsStreaming(false);
-        setAnalysisCache(prev => ({ ...prev, [cacheKey]: fullText }));
+        setIsStreaming(false); setCache(p => ({ ...p, [key]: full }));
       } else {
-        const chatData = await chatRes.json();
-        setAiAnalysis(chatData.error ? `❌ ${chatData.error}` : chatData.response);
-        if (!chatData.error) setAnalysisCache(prev => ({ ...prev, [cacheKey]: chatData.response }));
+        const d = await res.json();
+        const text = d.error ? `❌ ${d.error}` : d.response;
+        setAnalysis(text);
+        if (!d.error) setCache(p => ({ ...p, [key]: text }));
         setAiLoading(false);
       }
-    } catch {
-      setAiAnalysis("❌ [NETWORK ERROR]: Failed to contact backend.");
-      setAiLoading(false); setIsStreaming(false);
-    }
+    } catch { setAnalysis('❌ Network error.'); setAiLoading(false); setIsStreaming(false); }
   };
 
-  const executeCustomAiQuery = async () => {
-    if (!customQuery.trim() || !selectedItem) return;
-    setAiLoading(true); setAiAnalysis(""); setIsStreaming(false);
+  const askCustom = async () => {
+    if (!customQ.trim() || !selectedItem) return;
+    setAiLoading(true); setAnalysis(''); setIsStreaming(false);
     try {
-      const chatRes = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ headline: selectedItem.title, source: selectedItem.source, customPrompt: customQuery, provider: aiProvider })
+      const res = await fetch('/api/chat', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ headline: selectedItem.title, source: selectedItem.source, customPrompt: customQ, provider })
       });
-      const isStream = chatRes.headers.get('X-Stream') === 'true';
-      if (isStream) {
+      if (res.headers.get('X-Stream') === 'true') {
         setAiLoading(false); setIsStreaming(true);
-        const reader = chatRes.body.getReader();
-        const decoder = new TextDecoder();
-        let fullText = "";
+        const reader = res.body.getReader(); const dec = new TextDecoder();
+        let full = '';
         while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          fullText += decoder.decode(value, { stream: true });
-          setAiAnalysis(fullText);
+          const { done, value } = await reader.read(); if (done) break;
+          full += dec.decode(value, { stream: true }); setAnalysis(full);
         }
         setIsStreaming(false);
       } else {
-        const chatData = await chatRes.json();
-        setAiAnalysis(chatData.error ? `❌ ${chatData.error}` : chatData.response);
+        const d = await res.json();
+        setAnalysis(d.error ? `❌ ${d.error}` : d.response);
         setAiLoading(false);
       }
-    } catch {
-      setAiAnalysis("❌ [NETWORK ERROR]: Failed to process query.");
-      setAiLoading(false); setIsStreaming(false);
-    } finally {
-      setCustomQuery("");
-    }
+    } catch { setAnalysis('❌ Network error.'); setAiLoading(false); }
+    finally { setCustomQ(''); }
   };
 
-  const toggleVoiceSummary = () => {
+  const toggleVoice = () => {
     if (!window.speechSynthesis || !selectedItem) return;
     if (isSpeaking) { window.speechSynthesis.cancel(); setIsSpeaking(false); return; }
-    const clean = aiAnalysis.replace(/[■✦*]/g, '');
-    const utt = new SpeechSynthesisUtterance(`${selectedItem.title}. ${clean || 'No analysis available.'}`);
-    utt.onend = () => setIsSpeaking(false);
-    utt.onerror = () => setIsSpeaking(false);
-    setIsSpeaking(true);
-    window.speechSynthesis.speak(utt);
+    const utt = new SpeechSynthesisUtterance(`${selectedItem.title}. ${analysis.replace(/[■✦]/g, '')}`);
+    utt.onend = () => setIsSpeaking(false); utt.onerror = () => setIsSpeaking(false);
+    setIsSpeaking(true); window.speechSynthesis.speak(utt);
   };
 
-  const changeProvider = (p) => { setAiProvider(p); if (selectedItem) handleItemSelection(selectedItem, p); };
+  const switchProvider = (p) => { setProvider(p); if (selectedItem) selectItem(selectedItem, p); };
   const toggleGroup = (g) => setExpandedGroups(prev => ({ ...prev, [g]: !prev[g] }));
 
-  const getSentimentBadge = (sentiment) => {
-    if (sentiment === 'BULLISH') return (
-      <span className="badge-bull flex items-center gap-1 px-2 py-0.5 rounded-full" style={{ fontSize: 9, fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
-        <TrendingUp style={{ width: 10, height: 10 }} /> BULLISH
-      </span>
-    );
-    if (sentiment === 'BEARISH') return (
-      <span className="badge-bear flex items-center gap-1 px-2 py-0.5 rounded-full" style={{ fontSize: 9, fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
-        <TrendingDown style={{ width: 10, height: 10 }} /> BEARISH
-      </span>
-    );
-    return (
-      <span className="badge-neutral flex items-center gap-1 px-2 py-0.5 rounded-full" style={{ fontSize: 9, fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
-        <Minus style={{ width: 10, height: 10 }} /> NEUTRAL
-      </span>
-    );
-  };
+  let activeCat = { icon: <Globe className="w-4 h-4" />, iconClass: 'icon-slate' };
+  SIDEBAR_GROUPS.forEach(g => { if (g.categories[activeCategory]) activeCat = g.categories[activeCategory]; });
 
-  const renderAnalysis = (rawText, streaming) => {
-    if (!rawText) return null;
-    const lines = rawText.split('\n');
-    return lines.map((line, idx) => {
-      const clean = line.trim();
-      const isLast = idx === lines.length - 1;
-      if (clean.startsWith('■')) return (
-        <h3 key={idx} className="analysis-section-header">
-          <span>■</span> {clean.replace('■', '').trim()}
-        </h3>
-      );
-      if (clean.startsWith('✦')) return (
-        <div key={idx} className="analysis-bullet">
-          <span className="bullet-mark">✦</span>
-          <span>{clean.replace('✦', '').trim()}{streaming && isLast ? <span className="streaming-cursor" /> : ''}</span>
-        </div>
-      );
-      return clean ? (
-        <p key={idx} style={{ fontSize: 12, lineHeight: 1.7, color: 'var(--text-secondary)', paddingLeft: 16, marginBottom: 8 }}>
-          {clean}{streaming && isLast ? <span className="streaming-cursor" /> : ''}
-        </p>
-      ) : <div key={idx} style={{ height: 6 }} />;
-    });
-  };
-
-  let activeCatData = { icon: <Globe className="w-4 h-4" />, iconClass: "icon-slate" };
-  SIDEBAR_GROUPS.forEach(g => { if (g.categories[activeCategory]) activeCatData = g.categories[activeCategory]; });
-
-  const displayData = data[activeCategory]?.filter(item =>
+  const feedItems = data[activeCategory]?.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.source.toLowerCase().includes(searchQuery.toLowerCase())
   ) || [];
 
+  const renderAnalysis = (text, streaming) => {
+    if (!text) return null;
+    const lines = text.split('\n');
+    return lines.map((line, i) => {
+      const c = line.trim();
+      const isLast = i === lines.length - 1;
+      if (c.startsWith('■')) return (
+        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 20, marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #E5E7EB' }}>
+          <div style={{ width: 3, height: 14, background: '#0891B2', borderRadius: 2, flexShrink: 0 }} />
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#0891B2' }}>
+            {c.replace('■', '').trim()}
+          </span>
+        </div>
+      );
+      if (c.startsWith('✦')) return (
+        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '6px 0', lineHeight: 1.65 }}>
+          <span style={{ color: '#0891B2', fontWeight: 700, marginTop: 2, flexShrink: 0, fontSize: 11 }}>✦</span>
+          <span style={{ fontSize: 12 + textMod, color: '#374151', lineHeight: 1.65 }}>
+            {c.replace('✦', '').trim()}{streaming && isLast ? <span style={{ color: '#0891B2', animation: 'blink 0.8s step-end infinite' }}>▋</span> : ''}
+          </span>
+        </div>
+      );
+      return c ? (
+        <p key={i} style={{ fontSize: 12 + textMod, color: '#4B5563', lineHeight: 1.7, paddingLeft: 14, marginBottom: 6 }}>
+          {c}{streaming && isLast ? <span style={{ color: '#0891B2' }}>▋</span> : ''}
+        </p>
+      ) : <div key={i} style={{ height: 4 }} />;
+    });
+  };
+
+  // ── SENTIMENT BADGE ──
+  const SentimentBadge = ({ s }) => {
+    const map = {
+      BULLISH: { bg: '#ECFDF5', color: '#059669', border: '#A7F3D0', icon: <TrendingUp style={{ width: 9, height: 9 }} />, label: 'BULLISH' },
+      BEARISH: { bg: '#FEF2F2', color: '#DC2626', border: '#FECACA', icon: <TrendingDown style={{ width: 9, height: 9 }} />, label: 'BEARISH' },
+      NEUTRAL: { bg: '#F9FAFB', color: '#6B7280', border: '#E5E7EB', icon: <Minus style={{ width: 9, height: 9 }} />, label: 'NEUTRAL' },
+    };
+    const b = map[s] || map.NEUTRAL;
+    return (
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, padding: '3px 8px', borderRadius: 99, background: b.bg, color: b.color, border: `1px solid ${b.border}`, fontFamily: "'JetBrains Mono', monospace", fontSize: 9, fontWeight: 700, flexShrink: 0 }}>
+        {b.icon} {b.label}
+      </span>
+    );
+  };
+
+  // ─────────── STYLES (light-mode hardcoded for cards) ───────────
+  const S = {
+    page:       { fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif", height: '100vh', display: 'flex', flexDirection: 'column', background: '#F8F9FB', overflow: 'hidden' },
+    ticker:     { height: 30, display: 'flex', alignItems: 'center', overflow: 'hidden', background: '#111827', borderBottom: '1px solid #1F2937', flexShrink: 0, position: 'relative' },
+    header:     { background: 'rgba(255,255,255,0.96)', borderBottom: '1px solid #E5E7EB', padding: '10px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0, backdropFilter: 'blur(20px)', position: 'sticky', top: 0, zIndex: 20 },
+    sidebar:    { width: 300, background: '#FFFFFF', borderRight: '1px solid #E5E7EB', display: 'flex', flexDirection: 'column', flexShrink: 0, height: '100%' },
+    feedPanel:  { flex: 1, display: 'flex', flexDirection: 'column', background: '#F3F4F6', minWidth: 0, borderRight: '1px solid #E5E7EB' },
+    feedHeader: { padding: '12px 16px', background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 },
+    detailPanel:{ width: 520, background: '#FFFFFF', borderLeft: '1px solid #E5E7EB', display: 'flex', flexDirection: 'column', flexShrink: 0 },
+    card: (selected) => ({
+      background: selected ? '#FFFFFF' : '#FFFFFF',
+      border: selected ? '1.5px solid #0891B2' : '1px solid #E5E7EB',
+      borderRadius: 12,
+      padding: '14px 16px',
+      cursor: 'pointer',
+      position: 'relative',
+      overflow: 'hidden',
+      marginBottom: 0,
+      boxShadow: selected ? '0 0 0 3px rgba(8,145,178,0.1), 0 2px 8px rgba(0,0,0,0.06)' : '0 1px 3px rgba(0,0,0,0.04)',
+      transition: 'all 0.18s cubic-bezier(0.34,1.56,0.64,1)',
+      transform: selected ? 'translateX(3px)' : 'translateX(0)',
+    }),
+  };
+
   return (
-    <div className="luxury-grid h-screen w-full flex flex-col relative" style={{ fontFamily: 'var(--font-body)', userSelect: 'none' }}>
+    <div style={S.page}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap');
+        @keyframes tickerRun { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+        @keyframes livePulse { 0%{transform:scale(1);opacity:.4} 70%{transform:scale(2.2);opacity:0} 100%{transform:scale(1);opacity:0} }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .feed-card:hover { border-color: #CBD5E1 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important; transform: translateY(-1px) !important; }
+        .cat-btn:hover { background: #F1F5F9; }
+        .cat-btn.active-cat { background: #F0F9FF; border-color: #BAE6FD; }
+        ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 99px; } ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+        .ticker-inner { display: inline-block; animation: tickerRun 50s linear infinite; white-space: nowrap; }
+        .ticker-inner:hover { animation-play-state: paused; }
+      `}</style>
+
+      {/* ── INTRO ── */}
+      <AnimatePresence>
+        {isIntro && (
+          <motion.div exit={{ opacity: 0, scale: 1.04, transition: { duration: 0.6 } }}
+            style={{ position: 'fixed', inset: 0, zIndex: 100, background: '#060A14', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <Logo animated />
+            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} style={{ textAlign: 'center', marginTop: 24 }}>
+              <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 18, fontWeight: 800, letterSpacing: '0.3em', color: '#F1F5F9', textTransform: 'uppercase' }}>MOHIT SAHIJA</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: '0.5em', color: '#0891B2', textTransform: 'uppercase', fontWeight: 700, marginTop: 10 }}>AI-DRIVEN INTELLIGENCE ENGINE</div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }} style={{ display: 'flex', gap: 6, marginTop: 32 }}>
+              {[0,1,2].map(i => <motion.div key={i} style={{ width: 4, height: 4, borderRadius: '50%', background: '#0891B2' }} animate={{ opacity: [0.2,1,0.2] }} transition={{ delay: i*0.2, duration: 1, repeat: Infinity }} />)}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── TOAST ── */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div initial={{ opacity:0, y:40 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:20 }}
+            style={{ position:'fixed', bottom:24, right:24, zIndex:99, background:'#059669', color:'#fff', padding:'10px 16px', borderRadius:10, fontFamily:"'JetBrains Mono',monospace", fontSize:11, fontWeight:700, display:'flex', alignItems:'center', gap:8, boxShadow:'0 8px 24px rgba(0,0,0,0.15)' }}>
+            <CheckCircle2 style={{ width:14, height:14 }} /> {toast}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ── CMD PALETTE ── */}
       <AnimatePresence>
-        {cmdPaletteOpen && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="cmd-overlay fixed inset-0 z-50 flex items-start justify-center px-4"
-            style={{ paddingTop: '15vh' }}
-            onClick={() => setCmdPaletteOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.96, y: -10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.96, y: -10 }}
-              className="cmd-panel w-full" style={{ maxWidth: 520 }}
-              onClick={e => e.stopPropagation()}
-            >
-              <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--border-soft)', display: 'flex', alignItems: 'center', gap: 10, background: 'var(--bg-tertiary)' }}>
-                <Command style={{ width: 14, height: 14, color: 'var(--accent)', flexShrink: 0 }} />
-                <input
-                  autoFocus type="text"
-                  placeholder="Search intelligence categories..."
-                  value={cmdSearch} onChange={e => setCmdSearch(e.target.value)}
-                  style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', fontSize: 12, color: 'var(--text-primary)', fontFamily: 'var(--font-body)' }}
-                />
-                <kbd style={{ fontSize: 9, fontFamily: 'var(--font-mono)', padding: '3px 6px', background: 'var(--bg-secondary)', border: '1px solid var(--border-mid)', borderRadius: 4, color: 'var(--text-muted)' }}>ESC</kbd>
+        {cmdOpen && (
+          <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}
+            style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', backdropFilter:'blur(8px)', zIndex:50, display:'flex', alignItems:'flex-start', justifyContent:'center', paddingTop:'14vh' }}
+            onClick={() => setCmdOpen(false)}>
+            <motion.div initial={{ scale:0.95, y:-10 }} animate={{ scale:1, y:0 }} exit={{ scale:0.95, y:-10 }}
+              style={{ width:'100%', maxWidth:520, background:'#FFFFFF', border:'1px solid #E5E7EB', borderRadius:16, boxShadow:'0 20px 60px rgba(0,0,0,0.2)', overflow:'hidden' }}
+              onClick={e => e.stopPropagation()}>
+              <div style={{ padding:'12px 16px', borderBottom:'1px solid #F3F4F6', display:'flex', alignItems:'center', gap:10, background:'#F9FAFB' }}>
+                <Command style={{ width:14, height:14, color:'#0891B2', flexShrink:0 }} />
+                <input autoFocus type="text" placeholder="Search categories..." value={cmdSearch} onChange={e => setCmdSearch(e.target.value)}
+                  style={{ flex:1, border:'none', outline:'none', fontSize:13, color:'#111827', background:'transparent', fontFamily:"'Inter',sans-serif" }} />
+                <kbd style={{ fontSize:9, padding:'3px 7px', background:'#E5E7EB', borderRadius:4, fontFamily:"'JetBrains Mono',monospace", color:'#6B7280' }}>ESC</kbd>
               </div>
-              <div className="custom-scroll" style={{ maxHeight: 280, padding: 8, display: 'flex', flexDirection: 'column', gap: 2 }}>
-                {SIDEBAR_GROUPS.flatMap(g => Object.keys(g.categories))
-                  .filter(cat => cat.toLowerCase().includes(cmdSearch.toLowerCase()))
-                  .map(cat => (
-                    <button key={cat}
-                      onClick={() => { setActiveCategory(cat); setSelectedItem(null); setCmdPaletteOpen(false); setCmdSearch(""); }}
-                      style={{
-                        width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                        fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.06em',
-                        background: activeCategory === cat ? 'var(--accent)' : 'transparent',
-                        color: activeCategory === cat ? '#fff' : 'var(--text-secondary)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                        transition: 'all 0.15s'
-                      }}
-                    >
-                      <span>{cat}</span>
-                      <ArrowUpRight style={{ width: 12, height: 12, opacity: 0.5 }} />
-                    </button>
-                  ))}
+              <div style={{ maxHeight:280, overflowY:'auto', padding:8, display:'flex', flexDirection:'column', gap:2 }}>
+                {SIDEBAR_GROUPS.flatMap(g => Object.keys(g.categories)).filter(c => c.toLowerCase().includes(cmdSearch.toLowerCase())).map(cat => (
+                  <button key={cat} onClick={() => { setActiveCategory(cat); setSelectedItem(null); setCmdOpen(false); setCmdSearch(''); }}
+                    style={{ width:'100%', textAlign:'left', padding:'9px 12px', borderRadius:8, border:'none', cursor:'pointer', fontSize:12, fontWeight:600, background: activeCategory===cat ? '#0891B2' : 'transparent', color: activeCategory===cat ? '#fff' : '#374151', display:'flex', alignItems:'center', justifyContent:'space-between', transition:'all 0.12s' }}>
+                    <span>{cat}</span><ArrowUpRight style={{ width:12, height:12, opacity:0.5 }} />
+                  </button>
+                ))}
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── INTRO SPLASH ── */}
-      <AnimatePresence>
-        {isIntroPlaying && (
-          <motion.div
-            className="intro-screen"
-            exit={{ opacity: 0, scale: 1.04, transition: { duration: 0.7, ease: "easeInOut" } }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, position: 'relative', zIndex: 1 }}>
-              <MohitIntelligenceLogo animated />
-              <motion.div
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.9 }}
-                style={{ textAlign: 'center' }}
-              >
-                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 800, letterSpacing: '0.28em', color: '#EEF2FF', textTransform: 'uppercase', marginBottom: 10 }}>
-                  MOHIT SAHIJA
-                </h2>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.5em', color: 'var(--accent)', textTransform: 'uppercase', fontWeight: 700 }}>
-                  AI-DRIVEN MACRO ANALYTICS ENGINE
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
-                style={{ display: 'flex', gap: 6 }}
-              >
-                {[0,1,2].map(i => (
-                  <motion.div key={i}
-                    style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--accent)' }}
-                    animate={{ opacity: [0.2, 1, 0.2] }}
-                    transition={{ delay: i * 0.2, duration: 1, repeat: Infinity }}
-                  />
-                ))}
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <Toast message={toastMsg} isVisible={toastMsg !== ""} />
-
       {/* ── TICKER ── */}
-      <div className="ticker-wrap shrink-0" style={{ height: 32, display: 'flex', alignItems: 'center', fontSize: 10, fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
-        <div className="ticker-move">
-          {[...Array(3)].map((_, loopIdx) => (
-            <span key={loopIdx}>
-              {tickerData.length > 0 ? tickerData.map((stock, idx) => (
-                <span key={`${loopIdx}-${idx}`} style={{ marginLeft: 28, marginRight: 28, color: stock.isUp ? 'var(--signal-bull)' : 'var(--signal-bear)' }}>
-                  {stock.isUp ? '▲' : '▼'} {stock.name} {stock.price} ({stock.percent}%)
+      <div style={S.ticker}>
+        <div style={{ position:'absolute', left:0, top:0, bottom:0, width:50, background:'linear-gradient(to right,#111827,transparent)', zIndex:2, pointerEvents:'none' }} />
+        <div style={{ position:'absolute', right:0, top:0, bottom:0, width:50, background:'linear-gradient(to left,#111827,transparent)', zIndex:2, pointerEvents:'none' }} />
+        <div className="ticker-inner">
+          {[...Array(3)].map((_, li) => (
+            <span key={li}>
+              {ticker.length > 0 ? ticker.map((s, i) => (
+                <span key={`${li}-${i}`} style={{ margin:'0 24px', fontFamily:"'JetBrains Mono',monospace", fontSize:10, fontWeight:700, color: s.isUp ? '#10B981' : '#F87171' }}>
+                  {s.isUp ? '▲' : '▼'} {s.name} {s.price} ({s.percent}%)
                 </span>
-              )) : (
-                <span style={{ marginLeft: 24, color: 'var(--text-muted)' }}>CONNECTING REAL-TIME GLOBAL MARKET CHANNELS...</span>
-              )}
+              )) : <span style={{ margin:'0 24px', fontFamily:"'JetBrains Mono',monospace", fontSize:10, color:'#4B5563' }}>CONNECTING MARKET FEED...</span>}
             </span>
           ))}
         </div>
       </div>
 
       {/* ── HEADER ── */}
-      <header className="main-header shrink-0" style={{ padding: '10px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 20 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', padding: 4 }}>
-            {mobileMenuOpen ? <X style={{ width: 18, height: 18 }} /> : <Menu style={{ width: 18, height: 18 }} />}
+      <header style={S.header}>
+        <div style={{ display:'flex', alignItems:'center', gap:14 }}>
+          <button className="lg:hidden" onClick={() => setMobileMenu(!mobileMenu)} style={{ border:'none', background:'none', cursor:'pointer', color:'#6B7280', padding:4 }}>
+            {mobileMenu ? <X style={{ width:18, height:18 }} /> : <Menu style={{ width:18, height:18 }} />}
           </button>
-          <MohitIntelligenceLogo animated={false} />
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text-primary)', textTransform: 'uppercase' }}>
-              MOHIT'S INTELLIGENCE
-            </h1>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <div className="live-dot" />
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 700, letterSpacing: '0.14em', color: 'var(--accent)', textTransform: 'uppercase' }}>LIVE</span>
+          <Logo animated={false} />
+          <div style={{ display:'flex', alignItems:'baseline', gap:8 }}>
+            <h1 style={{ fontFamily:"'Syne',sans-serif", fontSize:17, fontWeight:800, letterSpacing:'-0.02em', color:'#0F172A', textTransform:'uppercase' }}>MOHIT'S INTELLIGENCE</h1>
+            <div style={{ display:'flex', alignItems:'center', gap:5 }}>
+              <div style={{ width:6, height:6, borderRadius:'50%', background:'#10B981', position:'relative' }}>
+                <div style={{ position:'absolute', inset:-3, borderRadius:'50%', background:'#10B981', opacity:0.3, animation:'livePulse 2s ease-out infinite' }} />
+              </div>
+              <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, color:'#10B981', letterSpacing:'0.1em' }}>LIVE</span>
             </div>
           </div>
         </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <button onClick={() => setCmdPaletteOpen(true)}
-            className="hidden xl:flex"
-            style={{ alignItems: 'center', gap: 8, background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 8, fontSize: 9, fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-muted)', border: '1px solid var(--border-soft)', cursor: 'pointer', transition: 'all 0.15s' }}>
-            <Command style={{ width: 11, height: 11, color: 'var(--accent)' }} />
-            CMD+K
+        <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+          <button onClick={() => setCmdOpen(true)} className="hidden xl:flex"
+            style={{ alignItems:'center', gap:8, padding:'6px 12px', background:'#F1F5F9', border:'1px solid #E2E8F0', borderRadius:8, cursor:'pointer', fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, color:'#64748B', transition:'all 0.15s' }}>
+            <Command style={{ width:11, height:11, color:'#0891B2' }} /> CMD+K
           </button>
-
-          <div className="hidden lg:flex" style={{ alignItems: 'center', gap: 16, paddingRight: 16, borderRight: '1px solid var(--border-soft)' }}>
-            {[['IND', time.ahmedabad], ['NY', time.ny], ['LON', time.lon]].map(([label, t]) => (
-              <span key={label} className="time-chip">
-                <Clock style={{ width: 10, height: 10 }} /> {label}: {t}
+          <div className="hidden lg:flex" style={{ alignItems:'center', gap:14, paddingRight:14, borderRight:'1px solid #E5E7EB' }}>
+            {[['IND', time.ind], ['NY', time.ny], ['LON', time.lon]].map(([l, t]) => (
+              <span key={l} style={{ display:'flex', alignItems:'center', gap:5, fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:600, color:'#94A3B8' }}>
+                <Clock style={{ width:10, height:10 }} /> {l}: {t}
               </span>
             ))}
           </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button onClick={() => setIsDarkMode(!isDarkMode)}
-              style={{ padding: 8, borderRadius: 8, background: 'var(--bg-tertiary)', border: '1px solid var(--border-soft)', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}>
-              {isDarkMode ? <Sun style={{ width: 14, height: 14 }} /> : <Moon style={{ width: 14, height: 14 }} />}
-            </button>
-            <button onClick={() => pullRealtimeFeeds(true)} disabled={isSyncing}
-              style={{ padding: '8px 16px', background: 'var(--text-primary)', color: 'var(--bg-primary)', border: 'none', borderRadius: 8, fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 7, transition: 'all 0.2s' }}>
-              <RefreshCw style={{ width: 13, height: 13 }} className={isSyncing ? 'animate-spin' : ''} />
-              <span className="hidden sm:inline">{isSyncing ? 'SYNCING' : 'REFRESH'}</span>
-            </button>
-          </div>
+          <button onClick={() => setIsDark(!isDark)} style={{ padding:8, borderRadius:8, background:'#F1F5F9', border:'1px solid #E2E8F0', cursor:'pointer', display:'flex', color:'#64748B' }}>
+            {isDark ? <Sun style={{ width:14, height:14 }} /> : <Moon style={{ width:14, height:14 }} />}
+          </button>
+          <button onClick={() => fetchFeeds(true)} disabled={isSyncing}
+            style={{ padding:'8px 16px', background:'#0F172A', color:'#fff', border:'none', borderRadius:8, fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', cursor:'pointer', display:'flex', alignItems:'center', gap:7, transition:'all 0.2s' }}>
+            <RefreshCw style={{ width:13, height:13 }} className={isSyncing ? 'animate-spin' : ''} />
+            <span className="hidden sm:inline">{isSyncing ? 'SYNCING...' : 'REFRESH'}</span>
+          </button>
         </div>
       </header>
 
-      {/* ── MAIN LAYOUT ── */}
-      <div style={{ display: 'flex', flex: 1, minHeight: 0, overflow: 'hidden', position: 'relative' }}>
+      {/* ── BODY ── */}
+      <div style={{ display:'flex', flex:1, minHeight:0, overflow:'hidden', position:'relative' }}>
 
         {/* ── SIDEBAR ── */}
-        <div
-          className={`${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
-          style={{
-            position: 'absolute', top: 0, left: 0, height: '100%', width: 320,
-            background: 'var(--bg-secondary)', borderRight: '1px solid var(--border-soft)',
-            display: 'flex', flexDirection: 'column', zIndex: 30, flexShrink: 0,
-            transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)'
-          }}
-          // make it relative on lg
-        >
-          <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--border-soft)', flexShrink: 0 }}>
-            <span className="intel-label">Unified Search Matrices</span>
+        <div className={`${mobileMenu ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
+          style={{ ...S.sidebar, position:'absolute', top:0, left:0, height:'100%', zIndex:30, transition:'transform 0.3s ease' }}>
+          <div style={{ padding:'12px 16px', borderBottom:'1px solid #F1F5F9', flexShrink:0 }}>
+            <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'#94A3B8' }}>INTELLIGENCE MATRICES</span>
           </div>
-          <div className="custom-scroll" style={{ flex: 1, overflowY: 'auto', padding: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ flex:1, overflowY:'auto', padding:10, display:'flex', flexDirection:'column', gap:6 }}>
             {SIDEBAR_GROUPS.map((group, gi) => (
-              <div key={gi} className="sidebar-group">
-                <button className="sidebar-group-header" onClick={() => toggleGroup(group.title)}>
-                  <span>{group.title}</span>
-                  <ChevronDown style={{ width: 14, height: 14, color: 'var(--text-muted)', transition: 'transform 0.3s', transform: expandedGroups[group.title] ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              <div key={gi} style={{ border:'1px solid #F1F5F9', borderRadius:10, overflow:'hidden', background:'#FAFAFA' }}>
+                <button onClick={() => toggleGroup(group.title)}
+                  style={{ width:'100%', display:'flex', justifyContent:'space-between', alignItems:'center', padding:'10px 12px', background:'transparent', border:'none', cursor:'pointer', fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'#475569', transition:'background 0.15s' }}>
+                  {group.title}
+                  <ChevronDown style={{ width:13, height:13, color:'#94A3B8', transition:'transform 0.3s', transform: expandedGroups[group.title] ? 'rotate(180deg)' : 'rotate(0)' }} />
                 </button>
                 <AnimatePresence>
                   {expandedGroups[group.title] && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: 'hidden' }}>
-                      <div style={{ padding: '4px 8px 8px', display: 'flex', flexDirection: 'column', gap: 2 }}>
-                        {Object.entries(group.categories).map(([catName, catData]) => (
-                          <button key={catName}
-                            className={`cat-btn ${activeCategory === catName ? 'active' : ''}`}
-                            onClick={() => { setActiveCategory(catName); setSelectedItem(null); setSearchQuery(""); if (window.innerWidth < 1024) setMobileMenuOpen(false); }}
-                          >
-                            <span className={`cat-icon ${activeCategory === catName ? catData.iconClass : 'icon-slate'}`} style={{ opacity: activeCategory === catName ? 1 : 0.6 }}>
-                              {catData.icon}
-                            </span>
-                            <div style={{ flex: 1, minWidth: 0 }}>
-                              <div style={{ fontSize: 11, fontWeight: 700, color: activeCategory === catName ? 'var(--text-primary)' : 'var(--text-secondary)', truncate: true, marginBottom: 2 }}>
-                                {catName}
+                    <motion.div initial={{ height:0, opacity:0 }} animate={{ height:'auto', opacity:1 }} exit={{ height:0, opacity:0 }} style={{ overflow:'hidden' }}>
+                      <div style={{ padding:'4px 8px 8px', display:'flex', flexDirection:'column', gap:2 }}>
+                        {Object.entries(group.categories).map(([catName, catData]) => {
+                          const isActive = activeCategory === catName;
+                          return (
+                            <button key={catName} className={`cat-btn ${isActive ? 'active-cat' : ''}`}
+                              onClick={() => { setActiveCategory(catName); setSelectedItem(null); setSearchQuery(''); if (window.innerWidth < 1024) setMobileMenu(false); }}
+                              style={{ width:'100%', display:'flex', alignItems:'center', gap:10, padding:'8px 10px', borderRadius:8, border: isActive ? '1px solid #BAE6FD' : '1px solid transparent', background: isActive ? '#F0F9FF' : 'transparent', cursor:'pointer', textAlign:'left', transition:'all 0.15s' }}>
+                              <span className={`cat-icon ${isActive ? catData.iconClass : 'icon-slate'}`} style={{ padding:6, borderRadius:6, flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', opacity: isActive ? 1 : 0.55 }}>
+                                {catData.icon}
+                              </span>
+                              <div style={{ flex:1, minWidth:0 }}>
+                                <div style={{ fontSize:11, fontWeight: isActive ? 700 : 600, color: isActive ? '#0369A1' : '#374151', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{catName}</div>
+                                <div style={{ fontSize:9, color:'#9CA3AF', marginTop:2, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{catData.desc}</div>
                               </div>
-                              <div style={{ fontSize: 9, color: 'var(--text-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                                {catData.desc}
-                              </div>
-                            </div>
-                          </button>
-                        ))}
+                            </button>
+                          );
+                        })}
                       </div>
                     </motion.div>
                   )}
@@ -545,184 +476,192 @@ export default function DeepIntelligencePlatform() {
         </div>
 
         {/* ── FEED PANEL ── */}
-        <div style={{ flex: 1, borderRight: '1px solid var(--border-soft)', background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column', minWidth: 0, marginLeft: 320 }} className="lg:ml-0">
-          <div style={{ padding: '12px 20px', borderBottom: '1px solid var(--border-soft)', background: 'var(--bg-secondary)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexShrink: 0 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span className={`cat-icon ${activeCatData.iconClass}`}>{activeCatData.icon}</span>
-              <h2 style={{ fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', color: 'var(--text-primary)', textTransform: 'uppercase' }}>
-                {activeCategory}
-              </h2>
+        <div style={{ ...S.feedPanel, marginLeft: 300 }} className="lg:ml-0">
+          {/* Feed header */}
+          <div style={S.feedHeader}>
+            <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+              <span className={`cat-icon ${activeCat.iconClass}`} style={{ padding:7, borderRadius:8, display:'flex', alignItems:'center', justifyContent:'center' }}>{activeCat.icon}</span>
+              <div>
+                <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:13, fontWeight:800, color:'#0F172A', letterSpacing:'-0.01em' }}>{activeCategory}</h2>
+                <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:'#94A3B8', marginTop:1 }}>{feedItems.length} articles loaded</p>
+              </div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <Search style={{ width: 12, height: 12, position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-              <input type="text" placeholder="Filter nodes..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-                className="intel-input" style={{ width: 200, paddingLeft: 30, paddingRight: 12, paddingTop: 7, paddingBottom: 7 }} />
+            <div style={{ position:'relative' }}>
+              <Search style={{ width:12, height:12, position:'absolute', left:10, top:'50%', transform:'translateY(-50%)', color:'#9CA3AF' }} />
+              <input type="text" placeholder="Filter articles..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+                style={{ paddingLeft:30, paddingRight:12, paddingTop:7, paddingBottom:7, fontSize:12, border:'1px solid #E5E7EB', borderRadius:8, background:'#F9FAFB', color:'#374151', fontFamily:"'Inter',sans-serif", outline:'none', width:190, transition:'all 0.15s' }} />
             </div>
           </div>
 
-          <div className="custom-scroll" style={{ flex: 1, padding: 16, display: 'flex', flexDirection: 'column', gap: 10, overflowY: 'auto' }}>
+          {/* Feed cards */}
+          <div style={{ flex:1, overflowY:'auto', padding:14, display:'flex', flexDirection:'column', gap:10 }}>
             {isSyncing && !data[activeCategory] ? (
               [...Array(5)].map((_, i) => (
-                <div key={i} style={{ padding: 16, borderRadius: 12, border: '1px solid var(--border-soft)', background: 'var(--bg-secondary)', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  <div className="shimmer-bg" style={{ height: 14, borderRadius: 6, width: '75%' }} />
-                  <div className="shimmer-bg" style={{ height: 10, borderRadius: 6, width: '45%' }} />
+                <div key={i} style={{ background:'#fff', border:'1px solid #E5E7EB', borderRadius:12, padding:16, display:'flex', flexDirection:'column', gap:10 }}>
+                  <div style={{ height:12, borderRadius:6, background:'#F1F5F9', width:'40%' }} className="shimmer-bg" />
+                  <div style={{ height:16, borderRadius:6, background:'#F1F5F9', width:'85%' }} className="shimmer-bg" />
+                  <div style={{ height:16, borderRadius:6, background:'#F1F5F9', width:'70%' }} className="shimmer-bg" />
+                  <div style={{ height:10, borderRadius:6, background:'#F1F5F9', width:'30%' }} className="shimmer-bg" />
                 </div>
               ))
-            ) : displayData.length === 0 ? (
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', paddingTop: 60 }}>
-                <Target style={{ width: 36, height: 36, marginBottom: 12, opacity: 0.4 }} />
-                <p style={{ fontSize: 11, fontFamily: 'var(--font-mono)' }}>No telemetry blocks found for this segment.</p>
-                <p style={{ fontSize: 10, color: 'var(--text-faint)', marginTop: 6 }}>Try refreshing the data stream.</p>
+            ) : feedItems.length === 0 ? (
+              <div style={{ flex:1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', color:'#9CA3AF', paddingTop:60 }}>
+                <Target style={{ width:36, height:36, marginBottom:12, opacity:0.4 }} />
+                <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:11 }}>No articles found.</p>
               </div>
-            ) : displayData.map(item => (
-              <motion.div key={item.id} layoutId={`card-${item.id}`}
-                onClick={() => handleItemSelection(item)}
-                className={`feed-card ${selectedItem?.id === item.id ? 'selected' : ''}`}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, gap: 8 }}>
-                  <span className="source-badge">{item.source}</span>
-                  {getSentimentBadge(item.sentiment)}
-                </div>
-                <h3 style={{ fontSize: 13, fontWeight: 600, lineHeight: 1.45, color: 'var(--text-primary)', marginBottom: 10, transition: 'color 0.2s' }}>
-                  {item.title}
-                </h3>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
-                    <Calendar style={{ width: 10, height: 10 }} /> {item.dateString}
-                  </span>
-                  <span className="time-ago">{getTimeAgo(item.rawDate)}</span>
-                </div>
-              </motion.div>
-            ))}
+            ) : feedItems.map(item => {
+              const selected = selectedItem?.id === item.id;
+              return (
+                <motion.div key={item.id} onClick={() => selectItem(item)}
+                  className="feed-card"
+                  style={S.card(selected)}
+                  whileHover={!selected ? { y: -1 } : {}}
+                >
+                  {/* Left accent bar */}
+                  <div style={{ position:'absolute', left:0, top:0, bottom:0, width:3, background: selected ? '#0891B2' : 'transparent', borderRadius:'12px 0 0 12px', transition:'background 0.2s' }} />
+
+                  {/* Top row: source + sentiment */}
+                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:10, paddingLeft:6 }}>
+                    <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.08em', textTransform:'uppercase', padding:'3px 8px', borderRadius:5, background:'#F1F5F9', border:'1px solid #E2E8F0', color:'#475569' }}>
+                      {item.source}
+                    </span>
+                    <SentimentBadge s={item.sentiment} />
+                  </div>
+
+                  {/* ── TITLE — the most important element ── */}
+                  <h3 style={{ fontSize:13, fontWeight:650, lineHeight:1.48, color: selected ? '#0369A1' : '#111827', marginBottom:10, paddingLeft:6, fontFamily:"'Inter',sans-serif", letterSpacing:'-0.01em', transition:'color 0.2s' }}>
+                    {item.title}
+                  </h3>
+
+                  {/* Bottom row: date + time ago */}
+                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', paddingLeft:6 }}>
+                    <span style={{ display:'flex', alignItems:'center', gap:5, fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:'#9CA3AF' }}>
+                      <Calendar style={{ width:10, height:10 }} /> {item.dateString}
+                    </span>
+                    <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:600, color:'#0891B2', background:'rgba(8,145,178,0.08)', padding:'2px 8px', borderRadius:99, border:'1px solid rgba(8,145,178,0.15)' }}>
+                      {getTimeAgo(item.rawDate)}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
         {/* ── DETAIL PANEL ── */}
-        <div
-          style={{
-            width: 520, flexShrink: 0,
-            background: 'var(--bg-secondary)', borderLeft: '1px solid var(--border-soft)',
-            display: selectedItem ? 'flex' : 'none', flexDirection: 'column',
-            position: 'absolute', top: 0, right: 0, height: '100%', zIndex: 20
-          }}
-          className="lg:relative lg:flex lg:flex-col"
-        >
+        <div style={{ ...S.detailPanel, display: selectedItem ? 'flex' : 'none', position:'absolute', right:0, top:0, height:'100%', zIndex:20 }} className="lg:relative lg:flex">
+
           {/* Detail header */}
-          <div style={{ padding: '10px 16px', borderBottom: '1px solid var(--border-soft)', background: 'var(--bg-tertiary)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
+          <div style={{ padding:'10px 16px', borderBottom:'1px solid #F1F5F9', background:'#FAFAFA', display:'flex', justifyContent:'space-between', alignItems:'center', flexShrink:0 }}>
             <button onClick={() => setSelectedItem(null)}
-              style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 9, fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-secondary)', background: 'var(--bg-secondary)', border: '1px solid var(--border-soft)', padding: '5px 10px', borderRadius: 6, cursor: 'pointer', transition: 'all 0.15s' }}>
+              style={{ display:'flex', alignItems:'center', gap:5, padding:'5px 10px', background:'#fff', border:'1px solid #E5E7EB', borderRadius:7, fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.08em', color:'#64748B', cursor:'pointer', textTransform:'uppercase' }}>
               ← BACK
             </button>
-            <div style={{ display: 'flex', gap: 6 }}>
-              {[-1, 1].map((delta, i) => (
-                <button key={i} onClick={() => setTextSizeModifier(p => Math.max(-2, Math.min(4, p + delta)))}
-                  style={{ fontSize: 10, fontFamily: 'var(--font-mono)', fontWeight: 700, padding: '4px 10px', borderRadius: 6, background: 'var(--bg-secondary)', border: '1px solid var(--border-soft)', color: 'var(--text-secondary)', cursor: 'pointer' }}>
-                  {delta > 0 ? 'A+' : 'A−'}
+            <div style={{ display:'flex', gap:6 }}>
+              {[['A−', -1], ['A+', 1]].map(([lbl, d]) => (
+                <button key={lbl} onClick={() => setTextMod(p => Math.max(-2, Math.min(4, p+d)))}
+                  style={{ padding:'4px 10px', background:'#fff', border:'1px solid #E5E7EB', borderRadius:6, fontFamily:"'JetBrains Mono',monospace", fontSize:10, fontWeight:700, color:'#64748B', cursor:'pointer' }}>
+                  {lbl}
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="custom-scroll" style={{ flex: 1, padding: 24, overflowY: 'auto' }}>
+          {/* Detail content */}
+          <div style={{ flex:1, overflowY:'auto', padding:24 }}>
             <AnimatePresence mode="wait">
-              {selectedItem ? (
-                <motion.div key={selectedItem.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              {selectedItem && (
+                <motion.div key={selectedItem.id} initial={{ opacity:0, y:8 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0 }}
+                  style={{ display:'flex', flexDirection:'column', gap:20 }}>
 
-                  {/* Article header */}
-                  <div style={{ paddingBottom: 16, borderBottom: '1px solid var(--border-soft)' }}>
-                    <p className="article-meta" style={{ marginBottom: 10 }}>
-                      {selectedItem.source} • STAFF REPORTER • {selectedItem.dateString} AT {selectedItem.timeString}
+                  {/* Article title block */}
+                  <div style={{ paddingBottom:16, borderBottom:'1px solid #F1F5F9' }}>
+                    <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:600, letterSpacing:'0.14em', textTransform:'uppercase', color:'#94A3B8', marginBottom:10 }}>
+                      {selectedItem.source} · {selectedItem.dateString} AT {selectedItem.timeString}
                     </p>
-                    <h2 className="article-headline" style={{ fontSize: 20 + textSizeModifier }}>
+                    <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:20+textMod, fontWeight:800, lineHeight:1.2, letterSpacing:'-0.02em', color:'#0F172A' }}>
                       {selectedItem.title}
                     </h2>
                   </div>
 
                   {/* Voice button */}
-                  <button onClick={toggleVoiceSummary} className={`voice-btn ${isSpeaking ? 'speaking' : ''}`}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                      <div style={{ padding: 8, borderRadius: '50%', background: isSpeaking ? 'var(--accent)' : 'var(--bg-tertiary)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}>
-                        {isSpeaking
-                          ? <Square style={{ width: 12, height: 12, fill: '#fff', color: '#fff' }} />
-                          : <Play style={{ width: 12, height: 12, fill: 'var(--text-secondary)', color: 'var(--text-secondary)', marginLeft: 1 }} />
-                        }
+                  <button onClick={toggleVoice}
+                    style={{ width:'100%', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 14px', borderRadius:10, border: isSpeaking ? '1px solid #0891B2' : '1px solid #E5E7EB', background: isSpeaking ? '#F0F9FF' : '#FAFAFA', cursor:'pointer', transition:'all 0.2s' }}>
+                    <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+                      <div style={{ width:32, height:32, borderRadius:'50%', background: isSpeaking ? '#0891B2' : '#F1F5F9', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, transition:'all 0.2s' }}>
+                        {isSpeaking ? <Square style={{ width:11, height:11, fill:'#fff', color:'#fff' }} /> : <Play style={{ width:11, height:11, fill:'#64748B', color:'#64748B', marginLeft:1 }} />}
                       </div>
-                      <div>
-                        <p style={{ fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 2 }}>Listen to Takeaways (AI Voice)</p>
-                        <p style={{ fontSize: 9, color: 'var(--text-muted)' }}>{isSpeaking ? 'Click to stop playback' : 'Synthesize speech ledger stream'}</p>
+                      <div style={{ textAlign:'left' }}>
+                        <p style={{ fontFamily:"'Inter',sans-serif", fontSize:12, fontWeight:700, color:'#374151', marginBottom:2 }}>Listen to AI Voice Summary</p>
+                        <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, color:'#9CA3AF' }}>{isSpeaking ? 'Click to stop' : 'Synthesize speech stream'}</p>
                       </div>
                     </div>
-                    <Volume2 style={{ width: 16, height: 16, color: isSpeaking ? 'var(--accent)' : 'var(--text-muted)' }} />
+                    <Volume2 style={{ width:15, height:15, color: isSpeaking ? '#0891B2' : '#CBD5E1' }} />
                   </button>
 
-                  {/* Key Takeaways */}
-                  <div className="takeaways-box">
-                    <div className="takeaways-header">
-                      <span style={{ color: 'var(--accent)' }}>⚡</span> KEY TAKEAWAYS
+                  {/* Key Takeaways box */}
+                  <div style={{ border:'1px solid #E5E7EB', borderRadius:12, overflow:'hidden' }}>
+                    <div style={{ padding:'10px 14px', background:'#F8FAFC', borderBottom:'1px solid #E5E7EB', display:'flex', alignItems:'center', gap:7 }}>
+                      <span style={{ color:'#F59E0B', fontSize:12 }}>⚡</span>
+                      <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:'#374151' }}>KEY TAKEAWAYS</span>
                     </div>
-                    <div style={{ padding: 14, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 12, lineHeight: 1.6, color: 'var(--text-primary)' }}>
-                        <span style={{ color: 'var(--accent)', fontWeight: 700, marginTop: 1 }}>✦</span>
-                        <span>{selectedItem.title}</span>
+                    <div style={{ padding:14, display:'flex', flexDirection:'column', gap:10 }}>
+                      <div style={{ display:'flex', alignItems:'flex-start', gap:10, fontSize:12, lineHeight:1.6, color:'#111827' }}>
+                        <span style={{ color:'#0891B2', fontWeight:700, marginTop:2 }}>✦</span>
+                        <span style={{ fontWeight:500 }}>{selectedItem.title}</span>
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 12, lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-                        <span style={{ color: 'var(--text-muted)', marginTop: 1 }}>✦</span>
-                        <span>Live feed routed from {activeCategory} sector intelligence index.</span>
+                      <div style={{ display:'flex', alignItems:'flex-start', gap:10, fontSize:12, lineHeight:1.6, color:'#6B7280' }}>
+                        <span style={{ color:'#CBD5E1', marginTop:2 }}>✦</span>
+                        <span>Sourced from {selectedItem.source} via the {activeCategory} intelligence index.</span>
                       </div>
                     </div>
                   </div>
 
                   {/* AI Analysis */}
-                  <div style={{ fontSize: 12 + textSizeModifier }}>
+                  <div>
                     {aiLoading ? (
-                      <div style={{ padding: 24, border: '1px dashed var(--border-mid)', borderRadius: 12, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-                        <div className="ai-spinner" />
-                        <p style={{ fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-                          Parsing analytics via {aiProvider}...
+                      <div style={{ padding:28, border:'1px dashed #E5E7EB', borderRadius:12, display:'flex', flexDirection:'column', alignItems:'center', gap:12 }}>
+                        <div style={{ width:18, height:18, border:'2px solid #E5E7EB', borderTopColor:'#0891B2', borderRadius:'50%', animation:'spin 0.7s linear infinite' }} />
+                        <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, color:'#94A3B8', letterSpacing:'0.14em', textTransform:'uppercase' }}>
+                          PARSING INTELLIGENCE VIA {provider.toUpperCase()}...
                         </p>
                       </div>
-                    ) : aiAnalysis ? (
-                      <div>{renderAnalysis(aiAnalysis, isStreaming)}</div>
+                    ) : analysis ? (
+                      <div style={{ paddingTop:4 }}>{renderAnalysis(analysis, isStreaming)}</div>
                     ) : null}
                   </div>
 
-                  {/* Ask AI */}
-                  <div style={{ border: '1px solid var(--border-soft)', borderRadius: 12, background: 'var(--bg-tertiary)', padding: 14, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-                        ✦ Ask Intelligence AI
-                      </span>
-                      <div className="pill-toggle">
-                        {[['llama-cloud', 'Llama'], ['gemini', 'Gemini'], ['openai', 'OpenAI']].map(([val, label]) => (
-                          <button key={val} className={`pill-option ${aiProvider === val ? 'active' : ''}`} onClick={() => changeProvider(val)}>
-                            {label}
+                  {/* Ask AI box */}
+                  <div style={{ border:'1px solid #E5E7EB', borderRadius:12, background:'#FAFAFA', padding:14, display:'flex', flexDirection:'column', gap:12 }}>
+                    <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+                      <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'#94A3B8' }}>✦ ASK INTELLIGENCE AI</span>
+                      <div style={{ background:'#F1F5F9', border:'1px solid #E2E8F0', borderRadius:99, padding:3, display:'flex', gap:2 }}>
+                        {[['llama-cloud','Llama'],['gemini','Gemini'],['openai','OpenAI']].map(([val, lbl]) => (
+                          <button key={val} onClick={() => switchProvider(val)}
+                            style={{ padding:'3px 10px', borderRadius:99, border:'none', cursor:'pointer', fontFamily:"'JetBrains Mono',monospace", fontSize:9, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', background: provider===val ? '#0891B2' : 'transparent', color: provider===val ? '#fff' : '#64748B', boxShadow: provider===val ? '0 2px 6px rgba(8,145,178,0.25)' : 'none', transition:'all 0.2s' }}>
+                            {lbl}
                           </button>
                         ))}
                       </div>
                     </div>
-                    <div style={{ display: 'flex', gap: 8 }}>
-                      <input type="text" value={customQuery} onChange={e => setCustomQuery(e.target.value)}
-                        onKeyDown={e => e.key === 'Enter' && executeCustomAiQuery()}
-                        placeholder="Query this article or ask for analysis..."
-                        className="intel-input" style={{ flex: 1, padding: '8px 12px' }} />
-                      <button onClick={executeCustomAiQuery}
-                        style={{ padding: '8px 14px', background: 'var(--text-primary)', color: 'var(--bg-primary)', border: 'none', borderRadius: 8, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', flexShrink: 0 }}>
-                        <Send style={{ width: 13, height: 13 }} />
+                    <div style={{ display:'flex', gap:8 }}>
+                      <input type="text" value={customQ} onChange={e => setCustomQ(e.target.value)} onKeyDown={e => e.key==='Enter' && askCustom()}
+                        placeholder="Ask about this article..."
+                        style={{ flex:1, padding:'8px 12px', fontSize:12, border:'1px solid #E5E7EB', borderRadius:8, outline:'none', background:'#fff', color:'#374151', fontFamily:"'Inter',sans-serif", transition:'border-color 0.15s' }} />
+                      <button onClick={askCustom}
+                        style={{ padding:'8px 14px', background:'#0F172A', color:'#fff', border:'none', borderRadius:8, cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, transition:'all 0.2s' }}>
+                        <Send style={{ width:13, height:13 }} />
                       </button>
                     </div>
                   </div>
 
                   {/* Read Original */}
-                  <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" className="read-original-btn">
-                    READ ORIGINAL SOURCE <ArrowUpRight style={{ width: 14, height: 14 }} />
+                  <a href={selectedItem.link} target="_blank" rel="noopener noreferrer"
+                    style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, padding:'13px', background:'#0F172A', color:'#fff', borderRadius:10, fontFamily:"'JetBrains Mono',monospace", fontSize:10, fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', textDecoration:'none', transition:'all 0.2s' }}>
+                    READ ORIGINAL SOURCE <ArrowUpRight style={{ width:14, height:14 }} />
                   </a>
 
                 </motion.div>
-              ) : (
-                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', opacity: 0.5 }}>
-                  <Target style={{ width: 48, height: 48, marginBottom: 12 }} />
-                  <p style={{ fontSize: 11, fontFamily: 'var(--font-mono)' }}>Select a node to parse intelligence.</p>
-                </div>
               )}
             </AnimatePresence>
           </div>
