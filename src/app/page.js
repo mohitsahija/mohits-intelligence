@@ -44,6 +44,8 @@ const SIDEBAR_GROUPS = [
     title: "Core Intelligence",
     categories: {
       "SME & Corporate Expansion": { icon: <Target className="w-5 h-5" />, color: "bg-emerald-600 text-white", desc: "B2B Lead Gen: Facilities & Operations" },
+      "Ahmedabad Business Leads": { icon: <Building className="w-5 h-5" />, color: "bg-cyan-600 text-white", desc: "Live corporate expansion leads in Ahmedabad" },
+      "Gujarat Industry Watch": { icon: <Briefcase className="w-5 h-5" />, color: "bg-violet-600 text-white", desc: "Gujarat SME, MSME & industry moves" },
       "AI & Neural Tech": { icon: <Cpu className="w-5 h-5" />, color: "bg-blue-600 text-white", desc: "Latest artificial intelligence software" },
       "Cybersecurity & Threats": { icon: <ShieldAlert className="w-5 h-5" />, color: "bg-red-600 text-white", desc: "Threat intel, vulnerabilities & defense" },
       "Data Privacy & Compliance": { icon: <Lock className="w-5 h-5" />, color: "bg-amber-600 text-white", desc: "Regulatory standards & privacy protocols" },
