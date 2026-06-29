@@ -31,6 +31,8 @@ const LIVE_FEEDS = {
 
   // --- CORE INTELLIGENCE ---
   "SME & Corporate Expansion": "https://news.google.com/rss/search?q=(announces+new+facility+OR+opens+new+office+OR+infrastructure+expansion)+AND+(India+OR+Global)+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Ahmedabad Business Leads": "https://news.google.com/rss/search?q=(Ahmedabad+OR+GIFT+City+OR+Sanand+OR+Naroda+OR+Bavla+OR+Changodar)+(inaugurates+OR+opens+office+OR+new+branch+OR+facility+OR+plant+OR+investment+OR+MOU+OR+deal+OR+expansion+OR+sets+up+OR+launches)+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Gujarat Industry Watch": "https://news.google.com/rss/search?q=(Gujarat+OR+Ahmedabad)+(company+OR+business+OR+corporate+OR+SME+OR+startup+OR+MSME+OR+industry+OR+tender+OR+infrastructure+OR+telecom+OR+IT+company)+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
   "AI & Neural Tech": "https://news.google.com/rss/search?q=Artificial+Intelligence+software+tools+updates+when:2d&hl=en-US&gl=US&ceid=US:en",
   // ⚡ ADDED CYBERSECURITY FEED
   "Cybersecurity & Threats": "https://news.google.com/rss/search?q=Cybersecurity+threats+data+breach+vulnerabilities+when:2d&hl=en-US&gl=US&ceid=US:en",
