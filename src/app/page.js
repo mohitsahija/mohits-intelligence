@@ -38,48 +38,29 @@ const SIDEBAR_GROUPS = [
       "Travel & Forex Cards": { icon: <Plane className="w-5 h-5" />, color: "bg-cyan-500 text-white", desc: "International spending and forex rates" },
       "Business & Virtual Cards": { icon: <Building className="w-5 h-5" />, color: "bg-slate-700 text-white", desc: "Corporate expense & enterprise cards" },
       "World Money & Stocks": { icon: <TrendingUp className="w-5 h-5" />, color: "bg-teal-600 text-white", desc: "Global markets, shares, and IPOs" }
-      "Personal Finance & Tax":    { icon: <Banknote className="w-4 h-4" />, color: "bg-green-700 text-white", desc: "GST, income tax, SIP, RBI, gold prices" },
-      "Crypto & Web3":             { icon: <Bitcoin className="w-4 h-4" />, color: "bg-orange-600 text-white", desc: "Bitcoin, altcoins, blockchain news" },
     }
   },
 {
     title: "Core Intelligence",
     categories: {
-      "SME & Corporate Expansion":  { icon: <Target className="w-4 h-4" />, color: "bg-emerald-600 text-white", desc: "B2B Lead Gen: Facilities & Operations" },
-      "Ahmedabad Business Leads":   { icon: <Building className="w-4 h-4" />, color: "bg-cyan-600 text-white", desc: "Live corporate expansion in Ahmedabad" },
-      "Gujarat Industry Watch":     { icon: <Briefcase className="w-4 h-4" />, color: "bg-violet-600 text-white", desc: "Gujarat SME, MSME & industry moves" },
-      "AI & Neural Tech":           { icon: <Cpu className="w-4 h-4" />, color: "bg-blue-600 text-white", desc: "Latest artificial intelligence software" },
-      "Cybersecurity & Threats":    { icon: <ShieldAlert className="w-4 h-4" />, color: "bg-red-600 text-white", desc: "Threat intel, vulnerabilities & defense" },
-      "Data Privacy & Compliance":  { icon: <Lock className="w-4 h-4" />, color: "bg-amber-600 text-white", desc: "Regulatory standards & privacy protocols" },
-      "Digital Identity":           { icon: <Fingerprint className="w-4 h-4" />, color: "bg-indigo-600 text-white", desc: "Auth systems, biometrics & KYC" },
-      "Ads Creatives & Meta":       { icon: <Radio className="w-4 h-4" />, color: "bg-purple-600 text-white", desc: "Marketing and platform algorithms" },
-      "Tech Innovations":           { icon: <Layers className="w-4 h-4" />, color: "bg-slate-800 text-white", desc: "Hardware and enterprise technology" },
-      "Startups & Funding":         { icon: <Rocket className="w-4 h-4" />, color: "bg-pink-600 text-white", desc: "Funding rounds, unicorns, VC news" },
-      "Defense & National Security":{ icon: <Shield className="w-4 h-4" />, color: "bg-gray-700 text-white", desc: "Military, border, defense deals" },
+      "SME & Corporate Expansion": { icon: <Target className="w-5 h-5" />, color: "bg-emerald-600 text-white", desc: "B2B Lead Gen: Facilities & Operations" },
+      "AI & Neural Tech": { icon: <Cpu className="w-5 h-5" />, color: "bg-blue-600 text-white", desc: "Latest artificial intelligence software" },
+      "Cybersecurity & Threats": { icon: <ShieldAlert className="w-5 h-5" />, color: "bg-red-600 text-white", desc: "Threat intel, vulnerabilities & defense" },
+      "Data Privacy & Compliance": { icon: <Lock className="w-5 h-5" />, color: "bg-amber-600 text-white", desc: "Regulatory standards & privacy protocols" },
+      "Digital Identity": { icon: <Fingerprint className="w-5 h-5" />, color: "bg-indigo-600 text-white", desc: "Auth systems, biometrics & KYC" },
+      "Ads Creatives & Meta": { icon: <Radio className="w-5 h-5" />, color: "bg-purple-600 text-white", desc: "Marketing and platform algorithms" },
+      "Tech Innovations": { icon: <Layers className="w-5 h-5" />, color: "bg-slate-800 text-white", desc: "Hardware and enterprise technology" }
     }
   },
-
   {
-    title: "India Daily",
-    categories: {
-      "Politics & Government": { icon: <Newspaper className="w-4 h-4" />, color: "bg-orange-700 text-white", desc: "Elections, policy, government schemes" },
-      "Jobs & Career":         { icon: <Users className="w-4 h-4" />, color: "bg-blue-700 text-white", desc: "Hiring, layoffs, salary trends" },
-      "Education & Exams":     { icon: <GraduationCap className="w-4 h-4" />, color: "bg-teal-700 text-white", desc: "JEE, NEET, UPSC, MBA admissions" },
-      "Automobile & EVs":      { icon: <Car className="w-4 h-4" />, color: "bg-red-500 text-white", desc: "New launches, EV, petrol prices" },
-      "Science & Space":       { icon: <Rocket className="w-4 h-4" />, color: "bg-purple-700 text-white", desc: "ISRO, NASA, SpaceX, discoveries" },
-      "Bollywood & OTT":       { icon: <Film className="w-4 h-4" />, color: "bg-rose-600 text-white", desc: "Movies, OTT releases, box office" },
-    }
-  },
-  
- {
     title: "Everyday Essentials",
     categories: {
-      "E-commerce & Retail":    { icon: <ShoppingBag className="w-4 h-4" />, color: "bg-orange-500 text-white", desc: "Online shopping & retail industry" },
-      "Real Estate & Property": { icon: <Building className="w-4 h-4" />, color: "bg-blue-500 text-white", desc: "Housing, commercial, property markets" },
-      "Health & Lifestyle":     { icon: <HeartPulse className="w-4 h-4" />, color: "bg-rose-400 text-white", desc: "Wellness, fitness, and living" },
-      "Global Entertainment":   { icon: <Globe className="w-4 h-4" />, color: "bg-purple-500 text-white", desc: "Movies, sports, celebrity culture" },
+      "E-commerce & Retail": { icon: <ShoppingBag className="w-5 h-5" />, color: "bg-orange-500 text-white", desc: "Online shopping & retail industry" },
+      "Real Estate & Property": { icon: <Building className="w-5 h-5" />, color: "bg-blue-500 text-white", desc: "Housing, commercial, and property markets" },
+      "Health & Lifestyle": { icon: <HeartPulse className="w-5 h-5" />, color: "bg-rose-400 text-white", desc: "Wellness, fitness, and living" },
+      "Global Entertainment": { icon: <Film className="w-5 h-5" />, color: "bg-purple-500 text-white", desc: "Movies, sports, and celebrity culture" }
     }
-  },
+  }
 ];
 
 const MohitIntelligenceLogo = ({ animated = false }) => {
