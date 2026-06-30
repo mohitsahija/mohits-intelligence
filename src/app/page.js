@@ -148,7 +148,7 @@ export default function DeepIntelligencePlatform() {
   const [analysisCache, setAnalysisCache]   = useState({});
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
   const [cmdSearch, setCmdSearch]           = useState("");
-  const [aiProvider, setAiProvider]         = useState("gemini");
+  const [aiProvider, setAiProvider]         = useState("llama-cloud");
   const [aiAnalysis, setAiAnalysis]         = useState("");
   const [aiLoading, setAiLoading]           = useState(false);
   const [isStreaming, setIsStreaming]       = useState(false);
