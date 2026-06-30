@@ -19,7 +19,7 @@ const LIVE_FEEDS = {
 
   // --- VIRAL & TRENDING ---
   "Trending Now (Breaking)": "https://news.google.com/rss/search?q=Breaking+News+Trending+Now+when:1d&hl=en-US&gl=US&ceid=US:en",
-  "Viral Content & Buzz": "https://news.google.com/rss/search?q=Viral+internet+trends+buzzworthy+social+media+when:2d&hl=en-US&gl=US&ceid=US:en",
+  "Viral Content & Buzz": "https://news.google.com/rss/search?q=Viral+internet+trends+buzzworthy+social+media+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
   "Most Searched Topics": "https://news.google.com/rss/search?q=most+searched+trends+google+when:1d&hl=en-US&gl=US&ceid=US:en",
 
   // --- FINANCE & CARDS ---
@@ -34,12 +34,23 @@ const LIVE_FEEDS = {
   "Ahmedabad Business Leads": "https://news.google.com/rss/search?q=(Ahmedabad+OR+GIFT+City+OR+Sanand+OR+Naroda+OR+Bavla+OR+Changodar)+(inaugurates+OR+opens+office+OR+new+branch+OR+facility+OR+plant+OR+investment+OR+MOU+OR+deal+OR+expansion+OR+sets+up+OR+launches)+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
   "Gujarat Industry Watch": "https://news.google.com/rss/search?q=(Gujarat+OR+Ahmedabad)+(company+OR+business+OR+corporate+OR+SME+OR+startup+OR+MSME+OR+industry+OR+tender+OR+infrastructure+OR+telecom+OR+IT+company)+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
   "AI & Neural Tech": "https://news.google.com/rss/search?q=Artificial+Intelligence+software+tools+updates+when:2d&hl=en-US&gl=US&ceid=US:en",
+  "Startups & Funding": "https://news.google.com/rss/search?q=startup+funding+unicorn+venture+capital+India+investment+round+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Defense & National Security": "https://news.google.com/rss/search?q=India+defense+military+army+navy+airforce+security+border+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
+  
   // ⚡ ADDED CYBERSECURITY FEED
   "Cybersecurity & Threats": "https://news.google.com/rss/search?q=Cybersecurity+threats+data+breach+vulnerabilities+when:2d&hl=en-US&gl=US&ceid=US:en",
   "Data Privacy & Compliance": "https://news.google.com/rss/search?q=Data+privacy+GDPR+compliance+news+when:2d&hl=en-US&gl=US&ceid=US:en",
   "Digital Identity": "https://news.google.com/rss/search?q=Digital+identity+authentication+biometrics+news+when:2d&hl=en-US&gl=US&ceid=US:en",
   "Ads Creatives & Meta": "https://news.google.com/rss/search?q=Meta+Facebook+Ads+Algorithm+Creative+Marketing+when:2d&hl=en-US&gl=US&ceid=US:en",
   "Tech Innovations": "https://news.google.com/rss/search?q=Enterprise+Technology+Hardware+Networking+News+when:2d&hl=en-US&gl=US&ceid=US:en",
+
+  // --- INDIA DAILY ---
+  "Politics & Government": "https://news.google.com/rss/search?q=India+politics+government+policy+parliament+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Jobs & Career": "https://news.google.com/rss/search?q=jobs+hiring+layoffs+career+recruitment+India+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Education & Exams": "https://news.google.com/rss/search?q=JEE+NEET+UPSC+education+exam+results+admission+India+when:3d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Automobile & EVs": "https://news.google.com/rss/search?q=automobile+car+launch+EV+electric+vehicle+India+when:3d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Science & Space": "https://news.google.com/rss/search?q=ISRO+NASA+SpaceX+science+space+research+when:3d&hl=en-IN&gl=IN&ceid=IN:en",
+  "Bollywood & OTT": "https://news.google.com/rss/search?q=Bollywood+OTT+Netflix+movie+release+box+office+when:2d&hl=en-IN&gl=IN&ceid=IN:en",
   
   // --- EVERYDAY ESSENTIALS ---
   "E-commerce & Retail": "https://news.google.com/rss/search?q=Ecommerce+retail+business+trends+when:2d&hl=en-US&gl=US&ceid=US:en",
